@@ -1,0 +1,265 @@
+﻿@model Event
+
+@{
+	ViewData["Title"] = "Event Details";
+}
+
+<div class="container">
+	<div class="event-header">
+		<h1 class="event-title">
+			<i class="fas fa-calendar-alt"></i> @Model.Name
+			<span class="event-status @Model.Status.ToLower()">@Model.Status</span>
+		</h1>
+	</div>
+
+	<div class="event-detail-card">
+		<div class="event-meta">
+			<div class="meta-item">
+				<i class="fas fa-tag"></i>
+				<span>Type:</span>
+				<strong>@Model.EventType</strong>
+			</div>
+			<div class="meta-item">
+				<i class="fas fa-users"></i>
+				<span>Participants:</span>
+				<strong>@Model.ParticipationCount</strong>
+			</div>
+			<div class="meta-item">
+				<i class="fas fa-calendar-plus"></i>
+				<span>Created:</span>
+				<strong>@Model.Created.ToString("MMM dd, yyyy")</strong>
+			</div>
+		</div>
+
+		<div class="event-content">
+			<h3 class="section-title"><i class="fas fa-align-left"></i> Description</h3>
+			<p class="event-description">@Model.Description</p>
+
+			<div class="timeline">
+				<div class="time-item">
+					<i class="fas fa-play-circle"></i>
+					<div class="time-content">
+						<span class="time-label">Start Date</span>
+						<span class="time-value">@Model.StartDate.ToString("MMMM dd, yyyy - hh:mm tt")</span>
+					</div>
+				</div>
+				@if (Model.EndDate.HasValue)
+				{
+					<div class="time-item">
+						<i class="fas fa-flag-checkered"></i>
+						<div class="time-content">
+							<span class="time-label">End Date</span>
+							<span class="time-value">@Model.EndDate.Value.ToString("MMMM dd, yyyy - hh:mm tt")</span>
+						</div>
+					</div>
+				}
+			</div>
+
+			@if (Model.EndDate.HasValue)
+			{
+				<div class="duration-badge">
+					<i class="fas fa-hourglass-half"></i>
+					Total Duration: @GetEventDuration(Model) Minutes.
+				</div>
+			}
+		</div>
+
+		<div class="event-actions">
+			<a asp-action="Events" class="back-btn">
+				<i class="fas fa-arrow-left"></i> Back to Events
+			</a>
+		</div>
+	</div>
+</div>
+
+<style>
+	/* Consistent with existing color scheme */
+	:root {
+		--primary-color: #2A4365;
+		--secondary-color: #4299E1;
+		--accent-color: #48BB78;
+		--light-bg: #EBF8FF;
+		--text-dark: #2D3748;
+		--text-light: #FFFFFF;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 2rem auto;
+		padding: 0 2rem;
+	}
+
+	.event-header {
+		margin-bottom: 2rem;
+		padding: 1rem 0;
+		border-bottom: 2px solid var(--primary-color);
+	}
+
+	.event-title {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		color: var(--primary-color);
+		font-size: 2.2rem;
+	}
+
+	.event-status {
+		font-size: 1rem;
+		padding: 0.3rem 1rem;
+		border-radius: 20px;
+		background: #e2e8f0;
+		color: var(--text-dark);
+	}
+
+		.event-status.active {
+			background: var(--accent-color);
+			color: var(--text-light);
+		}
+
+		.event-status.completed {
+			background: #a0aec0;
+			color: var(--text-light);
+		}
+
+	.event-detail-card {
+		background: var(--text-light);
+		border-radius: 12px;
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+		padding: 2rem;
+	}
+
+	.event-meta {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+		padding: 1.5rem;
+		background: var(--light-bg);
+		border-radius: 8px;
+	}
+
+	.meta-item {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		font-size: 1.1rem;
+		color: var(--text-dark);
+	}
+
+		.meta-item i {
+			color: var(--secondary-color);
+			width: 25px;
+			text-align: center;
+		}
+
+	.event-content {
+		margin: 2rem 0;
+	}
+
+	.section-title {
+		color: var(--primary-color);
+		font-size: 1.5rem;
+		margin-bottom: 1.5rem;
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+	}
+
+	.event-description {
+		color: var(--text-dark);
+		font-size: 1.1rem;
+		line-height: 1.8;
+		margin-bottom: 2rem;
+		padding: 1rem;
+		background: #f8fafc;
+		border-radius: 8px;
+	}
+
+	.timeline {
+		border-left: 3px solid var(--secondary-color);
+		margin: 2rem 0;
+		padding-left: 2rem;
+	}
+
+	.time-item {
+		position: relative;
+		margin-bottom: 2rem;
+		padding-left: 2rem;
+	}
+
+		.time-item i {
+			position: absolute;
+			left: -1.2rem;
+			top: 0;
+			background: var(--text-light);
+			color: var(--secondary-color);
+			font-size: 1.5rem;
+		}
+
+	.time-label {
+		display: block;
+		color: #718096;
+		font-size: 0.9rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.time-value {
+		font-weight: 600;
+		color: var(--text-dark);
+		font-size: 1.1rem;
+	}
+
+	.duration-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.8rem;
+		padding: 0.8rem 1.5rem;
+		background: var(--light-bg);
+		color: var(--secondary-color);
+		border-radius: 25px;
+		font-weight: 600;
+		margin: 1rem 0;
+	}
+
+	.back-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.8rem;
+		padding: 0.8rem 2rem;
+		background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+		color: var(--text-light);
+		border-radius: 8px;
+		text-decoration: none;
+		transition: transform 0.3s ease;
+	}
+
+		.back-btn:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 5px 15px rgba(66, 153, 225, 0.3);
+		}
+
+	@@media (max-width: 768px) {
+		.container {
+			padding: 0 1rem;
+		}
+
+		.event-title {
+			font-size: 1.8rem;
+			flex-direction: column;
+			align-items: start;
+		}
+
+		.event-meta {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+@functions{
+	int GetEventDuration(Event eventItem)
+	{
+		if (!eventItem.EndDate.HasValue || eventItem.StartDate > eventItem.EndDate.Value)
+			return 0; // Prevents negative duration or null EndDate
+
+		return (int)Math.Ceiling((eventItem.EndDate.Value - eventItem.StartDate).TotalMinutes);
+	}
+}

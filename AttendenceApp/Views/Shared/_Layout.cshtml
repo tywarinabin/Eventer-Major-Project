@@ -1,0 +1,71 @@
+﻿@* Views/Shared/_Layout.cshtml *@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - EPAM-EM</title>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<style>
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="logo">EPAM-EM</div>
+			<button class="hamburger" aria-label="Toggle navigation">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<div class="nav-links">
+				<a asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Home</a>
+				<a asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fas fa-info-circle"></i> Privacy</a>
+				<a asp-area="" asp-controller="Event" asp-action="Events"><i class="fas fa-envelope"></i> Events</a>
+				<a asp-area="" asp-controller="Home" asp-action="Feedbacks"><i class="fas fa-box"></i> Feedbacks</a>
+				<a asp-area="" asp-controller="Login" asp-action=""><button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button></a>
+				
+			</div>
+		</nav>
+	</header>
+
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+
+	<footer class="footer display-1">
+
+		&copy; 2025 - AttendenceApp - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-white">Privacy</a>
+
+	</footer>
+
+	<script>
+		const hamburger = document.querySelector('.hamburger');
+		const navLinks = document.querySelector('.nav-links');
+
+		hamburger.addEventListener('click', (e) => {
+			e.stopPropagation();
+			navLinks.classList.toggle('active');
+			hamburger.classList.toggle('active');
+		});
+
+		document.addEventListener('click', (e) => {
+			if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+				navLinks.classList.remove('active');
+				hamburger.classList.remove('active');
+			}
+		});
+
+		document.querySelectorAll('.nav-links a, .nav-links button').forEach(item => {
+			item.addEventListener('click', () => {
+				navLinks.classList.remove('active');
+				hamburger.classList.remove('active');
+			});
+		});
+	</script>
+
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

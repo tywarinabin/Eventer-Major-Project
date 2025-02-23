@@ -1,0 +1,154 @@
+﻿@model Event
+
+@{
+    ViewData["Title"] = "Event Details";
+}
+
+<head>
+    <title>Event Details</title>
+</head>
+
+<!-- FontAwesome CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+<div class="event-container">
+    <div class="event-header">
+        <h2><i class="fas fa-calendar-check"></i> @Model.Name</h2>
+        <span class="status @Model.Status">@Model.Status</span>
+    </div>
+
+    <div class="event-content">
+        <div class="event-info">
+            <p><i class="fas fa-info-circle"></i> <strong>Type:</strong> @Model.EventType</p>
+            <p><i class="fas fa-clock"></i> <strong>Start Date:</strong> @Model.StartDate.ToString("MMMM dd, yyyy - hh:mm tt")</p>
+
+            @if (Model.EndDate.HasValue)
+            {
+                <p><i class="fas fa-hourglass-end"></i> <strong>End Date:</strong> @Model.EndDate.Value.ToString("MMMM dd, yyyy - hh:mm tt")</p>
+            }
+
+            <p class="event-description"><i class="fas fa-align-left"></i> <strong>Description:</strong> @Model.Description</p>
+
+            <div class="event-stats">
+                <p><i class="fas fa-users"></i> <strong>Registered:</strong> @Model.RegistrationCount</p>
+                <p><i class="fas fa-check-circle"></i> <strong>Participants:</strong> @Model.ParticipationCount</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Styles for Full-Page Event View -->
+<style>
+    body {
+        background: #f4f6f9;
+        font-family: "Source Sans Pro", sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .event-container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .event-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 3px solid #0078C2;
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+        .event-header h2 {
+            color: #0078C2;
+            font-size: 1.8rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+    .status {
+        padding: 0.4rem 0.8rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        color: white;
+        text-transform: uppercase;
+    }
+
+        .status.upcoming {
+            background: #0078C2;
+        }
+
+        .status.ongoing {
+            background: #f39c12;
+        }
+
+        .status.completed {
+            background: #2ecc71;
+        }
+
+    .event-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .event-info p {
+        font-size: 1rem;
+        color: #333;
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .event-description {
+        font-size: 1rem;
+        color: #4A71BD;
+        font-weight: 500;
+    }
+
+    .event-stats {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        background: #f0f7ff;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+        .event-stats p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0078C2;
+        }
+</style>
+
+@@functions {
+    string GetEventStatus(Event eventItem)
+    {
+        var now = DateTime.UtcNow;
+        if (eventItem.StartDate > now)
+            return "Upcoming";
+        else if (eventItem.EndDate.HasValue && eventItem.EndDate > now)
+            return "Ongoing";
+        else
+            return "Completed";
+    }
+
+    string GetEventStatusClass(Event eventItem)
+    {
+        var now = DateTime.UtcNow;
+        if (eventItem.StartDate > now)
+            return "upcoming";
+        else if (eventItem.EndDate.HasValue && eventItem.EndDate > now)
+            return "ongoing";
+        else
+            return "completed";
+    }
+}
