@@ -46,131 +46,135 @@
 <!-- Styles for Event Cards -->
 <style>
 	body {
-	background: #f4f6f9;
-	font-family: "Source Sans Pro", sans-serif;
-	margin: 0;
-	padding: 0;
+		background: #f4f6f9;
+		font-family: "Source Sans Pro", sans-serif;
+		margin: 0;
+		padding: 0;
 	}
 
 	.container {
-	max-width: 1200px;
-	margin: auto;
-	padding: 2rem;
+		max-width:100vw;
+		margin: auto;
+		padding: 2rem;
 	}
 
 	.page-title {
-	text-align: center;
-	color: #333;
-	font-size: 2rem;
-	margin-bottom: 2rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.8rem;
+		text-align: center;
+		color: #333;
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.8rem;
 	}
 
 	.event-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 1.5rem;
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 1.5rem;
 	}
 
-	@@media (min-width: 768px) {
-	.event-grid {
-	grid-template-columns: repeat(2, 1fr);
-	}
+	@@media (min-width: 1650px) {
+		.event-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
 	.event-card {
-	background: white;
-	padding: 1.5rem;
-	border-radius: 12px;
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s ease-in-out;
+		background: white;
+		padding: 1.5rem;
+		border-radius: 12px;
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease-in-out;
 	}
 
-	.event-card:hover {
-	transform: translateY(-5px);
-	}
+		.event-card:hover {
+			transform: translateY(-5px);
+		}
 
 	.event-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 1rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1rem;
 	}
 
-	.event-header h3 {
-	margin: 0;
-	color: #333;
-	font-size: 1.4rem;
-	}
+		.event-header h3 {
+			margin: 0;
+			color: #333;
+			font-size: 1.4rem;
+		}
 
 	.status {
-	padding: 0.4rem 0.8rem;
-	font-size: 0.9rem;
-	border-radius: 5px;
-	color: white;
+		padding: 0.4rem 0.8rem;
+		font-size: 0.9rem;
+		border-radius: 5px;
+		color: white;
 	}
 
-	.status.Upcoming {
-	background: green;
-	font-weight:bold;
-	}
+		.status.Upcoming {
+			background: green;
+			font-weight: bold;
+		}
 
-	.status.Ongoing {
-	background: #f39c12;
-	font-weight:bold;
-	}
+		.status.Ongoing {
+			background: #f39c12;
+			font-weight: bold;
+		}
 
-	.status.Completed {
-	background: red;
-	font-weight:bold;
-	}
+		.status.Completed {
+			background: red;
+			font-weight: bold;
+		}
 
 	.event-type {
-	font-size: 1rem;
-	font-weight: 600;
-	color: #555;
+		font-size: 1rem;
+		font-weight: 600;
+		color: #555;
 	}
 
 	.event-description {
-	font-size: 0.95rem;
-	color: #666;
-	margin: 0.5rem 0;
+		font-size: 0.95rem;
+		color: #666;
+		margin: 0.5rem 0;
+		height: 8em;
+		overflow: hidden;
+		line-height:1.5em;
 	}
 
 	.event-footer {
-	margin-top: 1rem;
+		margin-top: 1rem;
 	}
 
-	.event-footer p {
-	margin: 0.3rem 0;
-	font-size: 0.9rem;
-	color: #777;
-	}
+		.event-footer p {
+			margin: 0.3rem 0;
+			font-size: 0.9rem;
+			color: #777;
+		}
 
 	.event-btn {
-	background: linear-gradient(45deg, #00ced1, #00a8b5);
-	color: white;
-	padding: 0.7rem 1rem;
-	border: none;
-	border-radius: 8px;
-	font-size: 1rem;
-	font-weight: 600;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	text-transform: uppercase;
-	margin-top: 1rem;
-	display: block;
-	width: 100%;
-	text-align: center;
+		background: linear-gradient(45deg, #00ced1, #00a8b5);
+		color: white;
+		padding: 0.7rem 1rem;
+		border: none;
+		border-radius: 8px;
+		font-size: 1rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		text-transform: uppercase;
+		margin-top: 1rem;
+		display: block;
+		width: 100%;
+		text-align: center;
 	}
 
-	.event-btn:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 5px 15px rgba(0, 206, 209, 0.3);
-	}
+		.event-btn:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 5px 15px rgba(0, 206, 209, 0.3);
+		}
 </style>
 
 @functions {
@@ -180,11 +184,11 @@
 
 		if (eventItem.EndDate < now)
 			return "Completed";
-		else if (eventItem.StartDate <= now && eventItem.EndDate <= now)
+		else if (eventItem.StartDate <= now || eventItem.EndDate <= now)
 			return "Ongoing";
-		else if(eventItem.StartDate>now)
+		else 
 			return "Upcoming";
-		return "ntg";
+		
 	}
 
 	string GetEventStatusClass(Event eventItem)
@@ -193,7 +197,7 @@
 
 		if (eventItem.EndDate < now)
 			return "Completed";
-		else if (eventItem.StartDate <= now && eventItem.EndDate <= now)
+		else if (eventItem.StartDate <= now || eventItem.EndDate <= now)
 			return "Ongoing";
 		else
 			return "Upcoming";

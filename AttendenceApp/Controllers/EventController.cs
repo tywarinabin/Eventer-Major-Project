@@ -93,5 +93,9 @@ namespace AttendenceApp.Controllers
 
             return View(eventItem);
         }
+        public IActionResult OpenParticipation(string id)
+        {
+            return View(_context.Events.FirstOrDefault(e => e.Id == int.Parse(id[id.Length - 1].ToString())));
+        }
     }
 }

@@ -65,6 +65,9 @@
 		</div>
 
 		<div class="event-actions">
+			<a asp-action="OpenParticipation" asp-controller="Event" asp-route-id="@Model.Name + @Model.Id" class="open-participation-btn">
+				<i class="fas fa-door-open"></i> Open Participation
+			</a>
 			<a asp-action="Events" class="back-btn">
 				<i class="fas fa-arrow-left"></i> Back to Events
 			</a>
@@ -118,7 +121,7 @@
 
 		.event-status.completed {
 			background: #a0aec0;
-			color: var(--text-light);
+			color: red;
 		}
 
 	.event-detail-card {
@@ -238,6 +241,29 @@
 			box-shadow: 0 5px 15px rgba(66, 153, 225, 0.3);
 		}
 
+	.event-actions {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.open-participation-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.8rem;
+		padding: 0.8rem 2rem;
+		background: var(--accent-color);
+		color: var(--text-light);
+		border-radius: 8px;
+		text-decoration: none;
+		transition: transform 0.3s ease;
+	}
+
+		.open-participation-btn:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
+		}
+
 	@@media (max-width: 768px) {
 		.container {
 			padding: 0 1rem;
@@ -254,7 +280,7 @@
 		}
 	}
 </style>
-@functions{
+@functions {
 	int GetEventDuration(Event eventItem)
 	{
 		if (!eventItem.EndDate.HasValue || eventItem.StartDate > eventItem.EndDate.Value)
