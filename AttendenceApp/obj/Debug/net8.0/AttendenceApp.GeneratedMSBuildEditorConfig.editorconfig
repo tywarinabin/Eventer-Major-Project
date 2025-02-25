@@ -40,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcT3BlblBhcnRpY2lwYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/LEARN EPAM Exercise/AttendenceApp-EPAM/AttendenceApp/Views/Employee/viewemployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcdmlld2VtcGxveWVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/LEARN EPAM Exercise/AttendenceApp-EPAM/AttendenceApp/Views/Event/create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcY3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -62,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/LEARN EPAM Exercise/AttendenceApp-EPAM/AttendenceApp/Views/Event/openparticipation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcb3BlbnBhcnRpY2lwYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/LEARN EPAM Exercise/AttendenceApp-EPAM/AttendenceApp/Views/Event/showattendance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcc2hvd2F0dGVuZGFuY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/LEARN EPAM Exercise/AttendenceApp-EPAM/AttendenceApp/Views/Home/Index.cshtml]

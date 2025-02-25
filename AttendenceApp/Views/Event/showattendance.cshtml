@@ -1,0 +1,107 @@
+﻿@model Event
+@{
+    ViewData["Title"] = "Event Attendance";
+}
+
+<!-- ShowAttendance.cshtml -->
+<div class="container-fluid p-4">
+    <!-- Event Header -->
+    <div class="header-card bg-primary text-white p-4 rounded-top text-center">
+        <h2 class="mb-1">
+            <i class="fas fa-calendar-alt"></i> @Model.Name
+        </h2>
+    </div>
+
+    <!-- Attendance Table -->
+    <div class="table-container shadow-lg mt-3 p-3 bg-white rounded">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th><i class="fas fa-user"></i> Employee Name</th>
+                        <th><i class="fas fa-id-card"></i> Employee ID</th>
+                        <th><i class="fas fa-clock"></i> Attendance Time (UTC)</th>
+                        <th><i class="fas fa-users"></i> View Employee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var attendance in Model.Attendances)
+                    {
+                        <tr>
+                            <td>@attendance.Employee?.Name</td>
+                            <td>@attendance.EmployeeId</td>
+                            <td>@attendance.Timestamp.ToString("dd MMM yyyy HH:mm")</td>
+                            <td><a asp-action="viewemployee" asp-controller="Employee" asp-route-id="@attendance.EmployeeId">View @attendance.Employee?.Name Profile</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        @if (!Model.Attendances.Any())
+        {
+            <div class="alert alert-warning text-center p-3">
+                <i class="fas fa-exclamation-triangle"></i> No attendance records found for this event.
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .container-fluid {
+        max-width: 95%;
+        margin: auto;
+    }
+
+    .header-card {
+        padding:4rem;
+        font-size:2.1rem;
+        font-weight:bold;
+        text-align:center;
+        transition: transform 0.2s;
+    }
+
+
+    .table-container {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        overflow-x: auto;
+    }
+
+    .table th, .table td {
+        padding:25px;
+        font-size: 1.4rem;
+    }
+
+    .thead-dark {
+        background-color: #2c3e50 !important;
+        color: white;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #e3f2fd !important;
+    }
+
+    @@media (max-width: 768px) {
+        .container-fluid
+
+    {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .table th, .table td {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+
+    }
+</style>
+
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>

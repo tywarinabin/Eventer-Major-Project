@@ -1,0 +1,109 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h2 class="text-center display-1"><i class="fas fa-user"></i> Employee Details</h2>
+        </div>
+        <div class="card-body p-4">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong><i class="fas fa-id-badge"></i> Employee ID:</strong> @Model.EmployeeID
+                </li>
+                <li class="list-group-item">
+                    <strong><i class="fas fa-user"></i> Name:</strong> @Model.Name
+                </li>
+                <li class="list-group-item">
+                    <strong><i class="fas fa-envelope"></i> Email:</strong> @Model.Email
+                </li>
+                <li class="list-group-item">
+                    <strong><i class="fas fa-calendar-check"></i> Events Attended:</strong> @Model.NumberOfEventsParticipated
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card shadow-lg mt-4">
+        <div class="card-header bg-secondary text-white text-center">
+            <h3><i class="fas fa-list"></i> Attendance History</h3>
+        </div>
+        <div class="card-body p-3">
+            @if (Model.Attendances.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped text-center">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th><i class="fas fa-calendar-alt"></i> Event Name</th>
+                                <th><i class="fas fa-clock"></i> Attendance Time (UTC)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var attendance in Model.Attendances)
+                            {
+                                <tr>
+                                    <td>@attendance.Event.Name</td>
+                                    <td>@attendance.Timestamp.ToString("dd MMM yyyy HH:mm")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning text-center">
+                    <i class="fas fa-exclamation-triangle"></i> No attendance records found.
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Back to Employees
+        </a>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        padding:1rem;
+        text-align:left;
+        margin-left:2rem;
+    }
+
+    .card {
+        border-radius: 10px;
+        padding:1.5rem;
+    }
+
+    .table th, .table td {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+    li{
+        list-style:none;
+        padding:1.4rem 0;
+        font-size:1.6rem;
+    }
+    h2{
+        text-align:center;
+        font-size:2.4rem;
+    }
+
+    .thead-dark {
+        background-color: #2c3e50 !important;
+        color: white;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #e3f2fd !important;
+    }
+</style>
+
+<script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>

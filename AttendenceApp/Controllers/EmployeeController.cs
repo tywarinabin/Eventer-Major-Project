@@ -39,26 +39,24 @@ namespace AttendenceApp.Controllers
             //Console.WriteLine($"Received eventId: {eventId}, employeeId: {employeeId}");
             //TempData["ErrorMessage"] = $"Received eventId: {eventId}, employeeId: {employeeId}";
 
-            // 🔹 Ensure event exists
+            
             var eventModel = await _context.Events.FirstOrDefaultAsync(e => e.Id == eventId);
             if (eventModel == null)
             {
                 TempData["ErrorMessage"] = "Event not found!";
-                return RedirectToAction("Index", "Home"); // 🔹 Redirect instead of returning View
+                return RedirectToAction("Index", "Home"); 
             }
-
-            // 🔹 Ensure Employee ID is provided
             if (employeeId <= 0)
             {
                 TempData["ErrorMessage"] = $"Employee not found with your Associated ID {employeeId}";
-                return RedirectToAction("OpenParticipation", new { eventId }); // 🔹 Redirect to break loop
+                return RedirectToAction("OpenParticipation", new { eventId }); 
             }
 
             var user = await _context.Employees.FirstOrDefaultAsync(u => u.EmployeeID == (employeeId).ToString());
             if (user == null)
             {
                 TempData["ErrorMessage"] = $"Employee not found with your Associated ID {employeeId}";
-                return RedirectToAction("OpenParticipation", new { eventId }); // 🔹 Redirect to break loop
+                return RedirectToAction("OpenParticipation", new { eventId });//Query String
             }
 
             var existingAttendance = await _context.Attendances
@@ -80,7 +78,9 @@ namespace AttendenceApp.Controllers
             try
             {
                 _context.Attendances.Add(attendance);
+                //_context.Events.Update()
                 await _context.SaveChangesAsync();
+
                 TempData["SuccessMessage"] = "Registration successful!";
             }
             catch (DbUpdateException)
@@ -115,6 +115,22 @@ namespace AttendenceApp.Controllers
 
             return View("OpenParticipation", eventModel);
         }
+
+        [Route("/viewemployee/{id}")]
+        public IActionResult ViewEmployee(int id)
+        {
+            var employee = _context.Employees
+                .Include(e => e.Attendances)
+                .FirstOrDefault(e => e.Id == id);
+
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            return View(employee);
+        }
+
 
     }
 }

@@ -105,23 +105,21 @@ namespace AttendenceApp.Controllers
             return View(_context.Events.FirstOrDefault((e) => e.Id == id));
 
         }
-        //[HttpGet]
-        //public async Task<IActionResult> OpenParticipation(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    var event = await _context.Events
-        //    .FirstOrDefaultAsync(e => e.Id == id);
+        // Controller Action (EventController.cs)
+        public async Task<IActionResult> ShowAttendance(int id)
+        {
+            var eventWithAttendees = await _context.Events
+                .Include(e => e.Attendances)
+                    .ThenInclude(a => a.Employee)
+                .FirstOrDefaultAsync(e => e.Id == id);
 
-        //if (event == null)
-        //{
-        //    return NotFound();
-        //}
+            if (eventWithAttendees == null)
+            {
+                return NotFound();
+            }
 
-        //return View(event);
-        //}
+            return View(eventWithAttendees);
+        }
 
     }
 }
