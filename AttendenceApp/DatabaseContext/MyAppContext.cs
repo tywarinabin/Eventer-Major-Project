@@ -30,9 +30,9 @@ namespace AttendenceApp.DatabaseContext
                 .OnDelete(DeleteBehavior.Cascade);  // ✅ Keep cascade delete for Event
 
             modelBuilder.Entity<Attendance>()
-                .HasOne(a => a.User)
+                .HasOne(a => a.Employee)
                 .WithMany()  // ⛔ No navigation property needed to prevent cycle
-                .HasForeignKey(a => a.UserId)
+                .HasForeignKey(a => a.EmployeeId)
                 .OnDelete(DeleteBehavior.NoAction);  // ✅ Disable cascade delete for User
         }
     }

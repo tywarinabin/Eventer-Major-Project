@@ -2,12 +2,14 @@ using System.Diagnostics;
 using AttendenceApp.DatabaseContext;
 using AttendenceApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.EntityFrameworkCore;
 
 namespace AttendenceApp.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+
         private readonly ILogger<HomeController> _logger;
         private readonly MyAppContext _appContext;
 

@@ -13,10 +13,10 @@ public class Attendance
     [ForeignKey("EventId")]
     public Event Event { get; set; } = null!;
 
-    public int UserId { get; set; }
+    public int EmployeeId { get; set; }
 
-    [ForeignKey("UserId")]
-    public User? User { get; set; } = null!;
+    [ForeignKey("EmployeeId")]
+    public Employee? Employee { get; set; } = null!;
 
     public DateTime Timestamp { get; set; } = DateTime.UtcNow;
 }

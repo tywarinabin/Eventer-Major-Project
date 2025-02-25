@@ -1,15 +1,13 @@
 ﻿@model Event
-
 @{
 	Layout = null;
 }
-
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Event Registration</title>
+	<title>@ViewData["Title"]</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -26,23 +24,18 @@
 				@TempData["SuccessMessage"]
 			</div>
 		}
-		
 
-		<form asp-action="OpenParticipation" asp-controller="Employee" method="post">
-			<!-- Ensure eventId is passed correctly -->
-			<input type="hidden" name="eventId" value="@Model.Id" />
-
+		<form asp-action="OpenParticipation" method="post">
 			<div class="form-group">
 				<label class="form-label">
 					<i class="fas fa-event icon-label"></i>
 					Event Name
 				</label>
 				<div class="input-group">
-					<input asp-for="Name" class="form-control" readonly />
+					<input asp-for="Name" value="@Model.Name" class="form-control" readonly />
 					<i class="fas fa-lock input-icon"></i>
 				</div>
 			</div>
-
 
 			<div class="form-group">
 				<label class="form-label">
@@ -50,23 +43,16 @@
 					Employee ID
 				</label>
 				<div class="input-group">
-					<input type="number" class="form-control" name="employeeId" required />
+					<input class="form-control" required />
 					<i class="fas fa-user input-icon"></i>
 				</div>
-				@if (TempData["ErrorMessage"] != null)
-				{
-					<div class="alert-error">
-						<i class="fas fa-exclamation-circle"></i>
-						@TempData["ErrorMessage"]
-					</div>
-				}
 
 				@if (!ViewData.ModelState.IsValid && ViewData.ModelState.ContainsKey("EmployeeNotFound"))
 				{
 					<div class="error-message">
 						<i class="fas fa-exclamation-circle"></i>
 						<span>Employee not found.</span>
-						<a href="/Employee/Register">Please Register an employee</a>
+						<a href="https://localhost:7147/Employee/Register">Please Register an employee</a>
 					</div>
 				}
 			</div>
@@ -79,6 +65,7 @@
 	</div>
 </body>
 </html>
+
 <style>
 	body {
 		background: #f8f9fa;
@@ -194,6 +181,7 @@
 		gap: 0.75rem;
 		border-left: 4px solid #28a745;
 	}
+
 
 	.error-message, .alert-error {
 		color: #dc3545;

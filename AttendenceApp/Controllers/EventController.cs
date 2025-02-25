@@ -1,11 +1,12 @@
 ﻿using AttendenceApp.DatabaseContext;
 using AttendenceApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace AttendenceApp.Controllers
 {
-    public class EventController : Controller
+    public class EventController : BaseController
     {
         private readonly MyAppContext _context;
 
@@ -35,7 +36,7 @@ namespace AttendenceApp.Controllers
             {
                 ModelState.AddModelError("EndDate", "End Date must be later than Start Date.");
             }
-            else if(newEvent.StartDate < DateTime.Now)
+            else if (newEvent.StartDate < DateTime.Now)
             {
                 ViewData["ErrorMessage"] = "You can't create an event for past, Try Again";
                 return View(newEvent);
@@ -93,9 +94,34 @@ namespace AttendenceApp.Controllers
 
             return View(eventItem);
         }
-        public IActionResult OpenParticipation(string id)
+
+        //Route["/Employee/GoToOpenParticipationEvent/"]
+        public IActionResult OpenParticipation(int id)
         {
-            return View(_context.Events.FirstOrDefault(e => e.Id == int.Parse(id[id.Length - 1].ToString())));
+            //ModelState.AddModelError("EmployeeNotFound", "Employee not Found");
+            //TempData["SuccessMessage"] = "Successfully Logged IN";
+            //return View(_context.Events.FirstOrDefault(e => e.Id == int.Parse(id[id.Length - 1].ToString())));
+          
+            return View(_context.Events.FirstOrDefault((e) => e.Id == id));
+
         }
+        //[HttpGet]
+        //public async Task<IActionResult> OpenParticipation(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var event = await _context.Events
+        //    .FirstOrDefaultAsync(e => e.Id == id);
+
+        //if (event == null)
+        //{
+        //    return NotFound();
+        //}
+
+        //return View(event);
+        //}
+
     }
 }
