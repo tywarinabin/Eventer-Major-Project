@@ -38,12 +38,14 @@
             </table>
         </div>
 
-        @if (!Model.Attendances.Any())
-        {
-            <div class="alert alert-warning text-center p-3">
-                <i class="fas fa-exclamation-triangle"></i> No attendance records found for this event.
-            </div>
-        }
+       <div style="margin-top:3rem; font-size:1.5rem; color:red;">
+            @if (!Model.Attendances.Any())
+            {
+                <div class="alert alert-warning text-center p-3">
+                    <i class="fas fa-exclamation-triangle"></i> No attendance records found for this event.
+                </div>
+            }
+       </div>
     </div>
 </div>
 
@@ -70,6 +72,7 @@
         display:flex;
         align-items:center;
         justify-content:center;
+        flex-direction:column;
         overflow-x: auto;
     }
 
@@ -96,8 +99,8 @@
     }
 
     .table th, .table td {
-        padding: 1.5rem;
-        font-size: 1rem;
+        padding: 1rem;
+        font-size: .8rem;
     }
 
     }

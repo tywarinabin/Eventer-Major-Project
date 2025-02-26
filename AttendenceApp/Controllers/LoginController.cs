@@ -36,8 +36,8 @@ namespace AttendenceApp.Controllers
         }
         public IActionResult Logout()
         {
-            HttpContext.Session.Clear(); // Clears the session
-            return RedirectToAction("index","login"); // Redirects to the login page
+            HttpContext.Session.Clear();
+            return RedirectToAction("index","login"); 
         }
 
 
