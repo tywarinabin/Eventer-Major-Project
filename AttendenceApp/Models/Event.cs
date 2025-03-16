@@ -6,6 +6,8 @@ using AttendenceApp.Models;
 
 public class Event
 {
+    internal readonly string Slug;
+
     [Key]
     public int Id { get; set; }
 

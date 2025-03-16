@@ -641,6 +641,29 @@
           }
         }
       },
+      "LigerShark.WebOptimizer.Core/3.0.433": {
+        "type": "package",
+        "dependencies": {
+          "NUglify": "1.21.9"
+        },
+        "compile": {
+          "lib/net8.0/WebOptimizer.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/WebOptimizer.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "build": {
+          "build/LigerShark.WebOptimizer.Core.props": {},
+          "build/LigerShark.WebOptimizer.Core.targets": {}
+        }
+      },
       "Microsoft.AspNetCore.Razor.Language/6.0.24": {
         "type": "package",
         "compile": {
@@ -2113,6 +2136,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/NuGet.Versioning.dll": {}
+        }
+      },
+      "NUglify/1.21.9": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/NUglify.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/NUglify.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.ClientModel/1.0.0": {
@@ -3592,6 +3628,25 @@
         "lib/net6.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard1.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll",
+        "logo.png"
+      ]
+    },
+    "LigerShark.WebOptimizer.Core/3.0.433": {
+      "sha512": "8NKU0iVfdVMrcIbMBMLgablHMY5dbYNoX+j0sV7JGufYd9504vD8yOiPoBqofHGfYT6wmN9kMts9Cn5jOOxtFA==",
+      "type": "package",
+      "path": "ligershark.weboptimizer.core/3.0.433",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/LigerShark.WebOptimizer.Core.props",
+        "build/LigerShark.WebOptimizer.Core.targets",
+        "lib/net6.0/WebOptimizer.Core.dll",
+        "lib/net6.0/WebOptimizer.Core.xml",
+        "lib/net8.0/WebOptimizer.Core.dll",
+        "lib/net8.0/WebOptimizer.Core.xml",
+        "ligershark.weboptimizer.core.3.0.433.nupkg.sha512",
+        "ligershark.weboptimizer.core.nuspec",
         "logo.png"
       ]
     },
@@ -6437,6 +6492,28 @@
         "nuget.versioning.nuspec"
       ]
     },
+    "NUglify/1.21.9": {
+      "sha512": "ULyI/scrIRAo2In6cnaCc/QkWUt+wB6pBVt5lrVddOKyamsCAm1XgArkk4px9tVn6SipjhbTt4M38QPlpoET+g==",
+      "type": "package",
+      "path": "nuglify/1.21.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/NUglify.dll",
+        "lib/net35/NUglify.xml",
+        "lib/net40/NUglify.dll",
+        "lib/net40/NUglify.xml",
+        "lib/net5.0/NUglify.dll",
+        "lib/net5.0/NUglify.xml",
+        "lib/netstandard1.3/NUglify.dll",
+        "lib/netstandard1.3/NUglify.xml",
+        "lib/netstandard2.0/NUglify.dll",
+        "lib/netstandard2.0/NUglify.xml",
+        "nuglify.1.21.9.nupkg.sha512",
+        "nuglify.nuspec",
+        "nuglify.png"
+      ]
+    },
     "System.ClientModel/1.0.0": {
       "sha512": "I3CVkvxeqFYjIVEP59DnjbeoGNfo/+SZrCLpRz2v/g0gpCHaEMPtWSY0s9k/7jR1rAsLNg2z2u1JRB76tPjnIw==",
       "type": "package",
@@ -7756,6 +7833,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "LigerShark.WebOptimizer.Core >= 3.0.433",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.2",
@@ -7806,12 +7884,16 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "LigerShark.WebOptimizer.Core": {
+            "target": "Package",
+            "version": "[3.0.433, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -7852,7 +7934,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

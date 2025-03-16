@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "c3K3lSaCHcM=",
+  "dgSpecHash": "4nVFvgsVp5Q=",
   "success": true,
   "projectFilePath": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\AttendenceApp.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,7 @@
     "C:\\Users\\nabin_tiwari\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\nabin_tiwari\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\nabin_tiwari\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\nabin_tiwari\\.nuget\\packages\\ligershark.weboptimizer.core\\3.0.433\\ligershark.weboptimizer.core.3.0.433.nupkg.sha512",
     "C:\\Users\\nabin_tiwari\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.24\\microsoft.aspnetcore.razor.language.6.0.24.nupkg.sha512",
     "C:\\Users\\nabin_tiwari\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\nabin_tiwari\\.nuget\\packages\\microsoft.build\\17.8.3\\microsoft.build.17.8.3.nupkg.sha512",
@@ -126,6 +127,7 @@
     "C:\\Users\\nabin_tiwari\\.nuget\\packages\\nuget.projectmodel\\6.11.0\\nuget.projectmodel.6.11.0.nupkg.sha512",
     "C:\\Users\\nabin_tiwari\\.nuget\\packages\\nuget.protocol\\6.11.0\\nuget.protocol.6.11.0.nupkg.sha512",
     "C:\\Users\\nabin_tiwari\\.nuget\\packages\\nuget.versioning\\6.11.0\\nuget.versioning.6.11.0.nupkg.sha512",
+    "C:\\Users\\nabin_tiwari\\.nuget\\packages\\nuglify\\1.21.9\\nuglify.1.21.9.nupkg.sha512",
     "C:\\Users\\nabin_tiwari\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\nabin_tiwari\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\nabin_tiwari\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",

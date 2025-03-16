@@ -20,6 +20,7 @@ namespace AttendenceApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Auth(string email, string password)
         {
+
             var user = await _myAppContext.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
 
             if (user == null)

@@ -80,16 +80,30 @@ namespace AttendenceApp.Controllers
         // Show all events
         public IActionResult Events()
         {
-            var events = _context.Events.ToList(); // Fetch events from DB
+            var events = _context.Events.ToList();
             return View(events);
         }
-        public IActionResult Details(int id)
+        public async Task<IActionResult> Details(string title)
         {
-            var eventItem = _context.Events.FirstOrDefault(e => e.Id == id);
+            if (string.IsNullOrEmpty(title))
+            {
+                return NotFound();
+            }
+            var parts = title.Split('-');
+            if (!int.TryParse(parts[0], out int eventId))
+            {
+                return NotFound();
+            }
+
+            var eventItem = await _context.Events.FindAsync(eventId);
+            var eventWithAttendees = await _context.Events
+                .Include(e => e.Attendances)
+                   .FirstOrDefaultAsync(e => e.Id == eventId);
+            ViewBag.ParticipantCount = eventWithAttendees.Attendances.Count;
 
             if (eventItem == null)
             {
-                return NotFound(); // Handle case where event doesn't exist
+                return NotFound();
             }
 
             return View(eventItem);
@@ -101,7 +115,7 @@ namespace AttendenceApp.Controllers
             //ModelState.AddModelError("EmployeeNotFound", "Employee not Found");
             //TempData["SuccessMessage"] = "Successfully Logged IN";
             //return View(_context.Events.FirstOrDefault(e => e.Id == int.Parse(id[id.Length - 1].ToString())));
-          
+
             return View(_context.Events.FirstOrDefault((e) => e.Id == id));
 
         }
@@ -112,6 +126,7 @@ namespace AttendenceApp.Controllers
                 .Include(e => e.Attendances)
                     .ThenInclude(a => a.Employee)
                 .FirstOrDefaultAsync(e => e.Id == id);
+            
 
             if (eventWithAttendees == null)
             {

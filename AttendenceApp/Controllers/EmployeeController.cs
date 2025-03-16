@@ -26,7 +26,7 @@ namespace AttendenceApp.Controllers
             var eventModel = await _context.Events.FirstOrDefaultAsync(e => e.Id == eventId);
             if (eventModel == null)
             {
-                return NotFound(); // 🔹 Fix: Ensures event exists before passing to View
+                return NotFound();
             }
 
             return View(eventModel);
@@ -46,10 +46,17 @@ namespace AttendenceApp.Controllers
                 TempData["ErrorMessage"] = "Event not found!";
                 return RedirectToAction("Index", "Home"); 
             }
-            if (employeeId <= 0)
+             if (employeeId <= 0 )
             {
                 TempData["ErrorMessage"] = $"Employee not found with your Associated ID {employeeId}";
                 return RedirectToAction("OpenParticipation", new { eventId }); 
+            }
+            if (eventModel.EndDate<=DateTime.UtcNow )
+            {
+
+                TempData["Success"]= "Event registration is already Closed. Thank You.";
+              
+                return RedirectToAction("success", "Employee"); 
             }
 
             var user = await _context.Employees.FirstOrDefaultAsync(u => u.EmployeeID == (employeeId).ToString());
@@ -64,8 +71,12 @@ namespace AttendenceApp.Controllers
 
             if (existingAttendance)
             {
-                TempData["SuccessMessage"] = "This employee is already registered for the event.";
-                return RedirectToAction("OpenParticipation", new { eventId });
+                TempData["Name"] = user.Name;
+
+                TempData["Success"] = $"This employee  {user.Name} is already registered for the event.";
+
+                return RedirectToAction("success", "Employee");
+               
             }
 
             var attendance = new Attendance
@@ -81,7 +92,9 @@ namespace AttendenceApp.Controllers
                 //_context.Events.Update()
                 await _context.SaveChangesAsync();
 
-                TempData["SuccessMessage"] = "Registration successful!";
+                TempData["Success"] = "Registration successful!";
+                TempData["Name"] = user.Name;
+                return View("success", user);
             }
             catch (DbUpdateException)
             {
@@ -90,8 +103,8 @@ namespace AttendenceApp.Controllers
             return RedirectToAction("OpenParticipation", new { eventId }); // 🔹 Redirect instead of View
         }
 
-
-        public IActionResult GoToOpenParticipationEvent(string id)
+        [HttpGet]
+        public IActionResult GoToOpenParticipationEvent(string id,string title)
         {
             if (string.IsNullOrEmpty(id))
             {
@@ -130,7 +143,12 @@ namespace AttendenceApp.Controllers
 
             return View(employee);
         }
-
+        [Route("/registration/success")]
+        public IActionResult Success()
+        {
+           
+            return View();
+        }
 
     }
 }

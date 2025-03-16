@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Success";
+    Layout = null;
+    TempData["Name"] = @TempData["Name"];
+    ViewBag.Success = @ViewBag.Success;
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<div class="success-container">
+    <i class="fas fa-check-circle success-icon"></i>
+    <h2>Registration Completed !!!</h2>
+    <h3>@TempData["Name"] is Already Registered</h3>
+    <h2 >@ViewBag.Success @TempData["Success"]</h2>
+</div>
+
+<style>
+    body {
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        margin: 0;
+        font-weight:bold;
+    }
+
+    .success-container {
+        text-align: center;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .success-icon {
+        font-size: 50px;
+        color: green;
+    }
+
+    h2 {
+        margin: 1rem;
+    }
+</style>

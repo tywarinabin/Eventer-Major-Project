@@ -30,7 +30,11 @@ namespace AttendenceApp.Repositories
         public async Task DeleteAsync(int id)
         {
             var entity = await _dbSet.FindAsync(id);
-            if (entity != null) { _dbSet.Remove(entity); await _context.SaveChangesAsync(); }
+            if (entity != null)
+            {
+                _dbSet.Remove(entity);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }
