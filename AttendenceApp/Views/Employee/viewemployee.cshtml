@@ -4,9 +4,10 @@
 }
 
 <div class="container mt-4">
-    <div class="card shadow-lg">
+    <!-- Employee Details Card -->
+    <div class="card shadow-lg mb-4">
         <div class="card-header bg-primary text-white text-center">
-            <h2 class="text-center display-1"><i class="fas fa-user"></i> Employee Details</h2>
+            <h2 class="display-4"><i class="fas fa-user"></i> Employee Details</h2>
         </div>
         <div class="card-body p-4">
             <ul class="list-group list-group-flush">
@@ -26,11 +27,12 @@
         </div>
     </div>
 
-    <div class="card shadow-lg mt-4">
+    <!-- Attendance History Card -->
+    <div class="card shadow-lg">
         <div class="card-header bg-secondary text-white text-center">
             <h3><i class="fas fa-list"></i> Attendance History</h3>
         </div>
-        <div class="card-body p-3">
+        <div class="card-body p-4">
             @if (Model.Attendances.Any())
             {
                 <div class="table-responsive">
@@ -42,13 +44,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var attendance in Model.Attendances)
-                            {
-                                <tr>
-                                    <td>@attendance.Event.Name</td>
-                                    <td>@attendance.Timestamp.ToString("dd MMM yyyy HH:mm")</td>
-                                </tr>
-                            }
+                            @* @foreach (var attendance in Model.Attendances) *@
+                            @* { *@
+                            @*     <tr> *@
+                            @*         <td>@attendance.Event.Name</td> *@
+                            @*         <td>@attendance.Timestamp.ToString("dd MMM yyyy HH:mm")</td> *@
+                            @*     </tr> *@
+                            @* } *@
                         </tbody>
                     </table>
                 </div>
@@ -62,6 +64,7 @@
         </div>
     </div>
 
+    <!-- Back Button -->
     <div class="text-center mt-4">
         <a asp-action="Index" asp-controller="Employee" class="btn btn-secondary">
             <i class="fas fa-arrow-left"></i> Back to Employees
@@ -69,31 +72,31 @@
     </div>
 </div>
 
+<!-- Custom Styling -->
 <style>
     body {
         background-color: #f8f9fa;
-        padding:1rem;
-        text-align:left;
-        margin-left:2rem;
+        padding: 1rem;
     }
 
     .card {
         border-radius: 10px;
-        padding:1.5rem;
+        padding: 1.5rem;
     }
 
     .table th, .table td {
-        padding: 15px;
+        padding: 12px 15px;
         font-size: 1.1rem;
     }
-    li{
-        list-style:none;
-        padding:1.4rem 0;
-        font-size:1.6rem;
+
+    li {
+        list-style: none;
+        padding: 1.4rem 0;
+        font-size: 1.4rem;
     }
-    h2{
-        text-align:center;
-        font-size:2.4rem;
+
+    h2 {
+        font-size: 2.5rem;
     }
 
     .thead-dark {
@@ -104,6 +107,15 @@
     .table-hover tbody tr:hover {
         background-color: #e3f2fd !important;
     }
+
+    .card-header i {
+        margin-right: 10px;
+    }
+
+    .alert-warning {
+        font-size: 1.2rem;
+    }
 </style>
 
+<!-- FontAwesome Icon Script -->
 <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>

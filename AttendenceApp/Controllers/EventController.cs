@@ -120,21 +120,30 @@ namespace AttendenceApp.Controllers
 
         }
         // Controller Action (EventController.cs)
-        public async Task<IActionResult> ShowAttendance(int id)
+        public async Task<IActionResult> ShowAttendance(int id, string eventName)
         {
             var eventWithAttendees = await _context.Events
                 .Include(e => e.Attendances)
                     .ThenInclude(a => a.Employee)
                 .FirstOrDefaultAsync(e => e.Id == id);
-            
 
             if (eventWithAttendees == null)
             {
                 return NotFound();
             }
 
+            // Optional: Validate the event name in the URL
+            var encodedEventName = eventWithAttendees.Name.ToLower().Replace(" ", "-");
+            if (encodedEventName != eventName)
+            {
+                return RedirectToAction("ShowAttendance", new { id = id, eventName = encodedEventName });
+            }
+
             return View(eventWithAttendees);
         }
-
+        public IActionResult NotFound()
+        {
+            return View("NotFound"); // Render the custom 404 page
+        }
     }
 }

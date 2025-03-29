@@ -20,5 +20,5 @@ public class Employee
     public int NumberOfEventsParticipated { get; set; } = 0;
 
     // Relationship with Attendance
-    public List<Attendance> Attendances { get; set; } = new List<Attendance>();
+    public List<Attendance>? Attendances { get; set; } = new List<Attendance>();
 }

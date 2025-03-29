@@ -1,0 +1,367 @@
+﻿@model EventReportViewModel
+@{
+    ViewData["Title"] = "Resolve Report";
+}
+
+<div class="report-resolve-container">
+    <div class="report-card">
+        <!-- Header with back button -->
+        <div class="report-header">
+            <a asp-action="Details" asp-route-id="@Model.Id" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Report
+            </a>
+            <h1 class="report-title">
+                <i class="fas fa-check-circle"></i> Resolve Report #@Model.Id
+            </h1>
+        </div>
+
+        <!-- Report Information Section -->
+        <div class="report-info-section">
+            <div class="info-grid">
+                <!-- Employee Info -->
+                <div class="info-item">
+                    <div class="info-icon employee-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-label">Employee</div>
+                        <div class="info-value">@Model.EmployeeId</div>
+                    </div>
+                </div>
+
+                <!-- Event Info -->
+                <div class="info-item">
+                    <div class="info-icon event-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-label">Event</div>
+                        <div class="info-value">@Model.Event?.Name</div>
+                    </div>
+                </div>
+
+                <!-- Report Type -->
+                <div class="info-item">
+                    <div class="info-icon type-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-label">Report Type</div>
+                        <div class="info-value">@Model.ReportType</div>
+                    </div>
+                </div>
+
+                <!-- Submission Date -->
+                <div class="info-item">
+                    <div class="info-icon date-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-label">Submitted On</div>
+                        <div class="info-value">@Model.SubmittedOn.ToString("MMM dd, yyyy hh:mm tt")</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="description-box">
+                <div class="description-header">
+                    <i class="fas fa-align-left"></i> Description
+                </div>
+                <div class="description-content">
+                    @Model.Description
+                </div>
+            </div>
+        </div>
+
+        <!-- Resolution Form -->
+        <form asp-action="Resolve" method="post" class="resolve-form">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label class="form-label">
+                    <i class="fas fa-comment-dots"></i> Resolution Notes *
+                </label>
+                <textarea asp-for="ResolutionNotes" class="resolution-textarea"
+                          placeholder="Describe how you resolved this issue..."
+                          rows="5"></textarea>
+                <span asp-validation-for="ResolutionNotes" class="validation-message"></span>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="resolve-btn">
+                    <i class="fas fa-check-circle"></i> Mark as Resolved
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Base Styles */
+    :root {
+        --primary-blue: #005a70;
+        --secondary-blue: #0088a7;
+        --light-blue: #e6f4f9;
+        --success-green: #2e8b57;
+        --dark-green: #1e6b47;
+        --warning-orange: #ff9e00;
+        --error-red: #d62828;
+        --text-dark: #333;
+        --text-light: #777;
+        --border-color: #e0e0e0;
+        --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8fafc;
+        color: var(--text-dark);
+    }
+
+    /* Container Styles */
+    .report-resolve-container {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .report-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
+        overflow: hidden;
+    }
+
+    /* Header Styles */
+    .report-header {
+        padding: 1.5rem;
+        background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+        color: white;
+        position: relative;
+    }
+
+    .back-btn {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        transition: all 0.2s;
+    }
+
+        .back-btn:hover {
+            color: rgba(255, 255, 255, 0.9);
+            transform: translateX(-3px);
+        }
+
+    .report-title {
+        margin: 0;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    /* Info Section Styles */
+    .report-info-section {
+        padding: 1.5rem;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .info-item {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        padding: 1rem;
+        background: var(--light-blue);
+        border-radius: 8px;
+        border-left: 4px solid var(--primary-blue);
+    }
+
+    .info-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        color: white;
+    }
+
+    .employee-icon {
+        background-color: #6c757d;
+    }
+
+    .event-icon {
+        background-color: #17a2b8;
+    }
+
+    .type-icon {
+        background-color: var(--warning-orange);
+    }
+
+    .date-icon {
+        background-color: #6f42c1;
+    }
+
+    .info-content {
+        flex: 1;
+    }
+
+    .info-label {
+        font-size: 0.85rem;
+        color: var(--text-light);
+        margin-bottom: 0.25rem;
+    }
+
+    .info-value {
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    /* Description Box */
+    .description-box {
+        margin-bottom: 2rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .description-header {
+        padding: 0.75rem 1rem;
+        background-color: #f8f9fa;
+        font-weight: 600;
+        color: var(--primary-blue);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .description-content {
+        padding: 1.5rem;
+        line-height: 1.6;
+        white-space: pre-line;
+    }
+
+    /* Form Styles */
+    .resolve-form {
+        padding: 0 1.5rem 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        color: var(--primary-blue);
+    }
+
+    .resolution-textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-family: inherit;
+        min-height: 150px;
+        transition: all 0.3s;
+        resize: vertical;
+    }
+
+        .resolution-textarea:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 136, 167, 0.1);
+        }
+
+    .validation-message {
+        color: var(--error-red);
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+        display: block;
+    }
+
+    /* Button Styles */
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .resolve-btn {
+        padding: 0.75rem 2rem;
+        background-color: var(--success-green);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s;
+    }
+
+        .resolve-btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .resolve-btn:active {
+            transform: translateY(0);
+        }
+
+    /* Responsive Adjustments */
+    @@media (max-width: 768px) {
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .report-header {
+            padding: 1rem;
+        }
+
+        .report-title {
+            font-size: 1.3rem;
+        }
+
+        .resolve-form {
+            padding: 0 1rem 1rem;
+        }
+    }
+
+    @@media (max-width: 576px) {
+        .info-item {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .info-icon {
+            margin-bottom: 0.5rem;
+        }
+
+        .form-actions {
+            justify-content: center;
+        }
+
+        .resolve-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>

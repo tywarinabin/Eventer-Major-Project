@@ -14,21 +14,19 @@
 </head>
 <body>
 	<div class="container">
+		<!-- Report Event Icon -->
+		<div class="report-icon">
+			<a href="/EventReport/ReportEvent?eventId=@Model.Id">
+				<i class="fas fa-exclamation-triangle"></i>
+			</a>
+		</div>
+
 		<div class="header-section">
 			<i class="fas fa-calendar-check fa-3x icon-primary"></i>
 			<h2>Event Registration</h2>
 		</div>
 
-		@if (TempData["SuccessMessage"] != null)
-		{
-			<div class="alert-success">
-				<i class="fas fa-check-circle"></i>
-				@TempData["SuccessMessage"]
-			</div>
-		}
-
 		<form asp-action="OpenParticipation" asp-controller="Employee" method="post">
-			<!-- Ensure eventId is passed correctly -->
 			<input type="hidden" name="eventId" value="@Model.Id" />
 
 			<div class="form-group">
@@ -42,11 +40,10 @@
 				</div>
 			</div>
 
-
 			<div class="form-group">
 				<label class="form-label">
 					<i class="fas fa-id-card icon-label"></i>
-					Employee ID
+					Employee IDss
 				</label>
 				<div class="input-group">
 					<input type="number" class="form-control" name="employeeId" required />
@@ -77,6 +74,7 @@
 	</div>
 </body>
 </html>
+
 <style>
 	body {
 		background: #f8f9fa;
@@ -90,6 +88,7 @@
 	}
 
 	.container {
+		position: relative; /* Added for positioning the report icon */
 		background: #ffffff;
 		border-radius: 16px;
 		box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
@@ -98,6 +97,23 @@
 		max-width: 500px;
 		transition: transform 0.3s ease;
 	}
+
+	/* Report Event Icon Styling */
+	.report-icon {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		font-size: 18px;
+	}
+
+		.report-icon a {
+			color: #dc3545;
+			text-decoration: none;
+		}
+
+			.report-icon a:hover {
+				color: #c82333;
+			}
 
 	.header-section {
 		text-align: center;

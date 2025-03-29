@@ -1,0 +1,308 @@
+﻿@model AttendenceApp.Models.EventReport
+@{
+    ViewData["Title"] = "Report Details";
+    Layout = "_Layout";
+}
+
+<div class="report-detail-container">
+    <div class="report-header">
+       
+        <h1 class="report-title">
+            <i class="fas fa-flag"></i> Report #@Model.Id
+        </h1>
+        <div class="report-status-badge @GetStatusClass(Model.Status)">
+            <i class="@GetStatusIcon(Model.Status)"></i> @Model.Status
+        </div>
+    </div>
+
+    <div class="report-detail-card">
+        <div class="detail-section">
+            <h2 class="section-title">
+                <i class="fas fa-info-circle"></i> Basic Information
+            </h2>
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-calendar-alt"></i> Event:</span>
+                    <span class="detail-value">@Model.Event?.Name</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-user"></i> Employee ID:</span>
+                    <span class="detail-value">@Model.EmployeeId</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-tag"></i> Report Type:</span>
+                    <span class="detail-value">
+                        <i class="@GetReportTypeIcon(Model.ReportType)"></i> @Model.ReportType
+                    </span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label"><i class="far fa-clock"></i> Submitted On:</span>
+                    <span class="detail-value">@Model.SubmittedOn.ToString("MMMM dd, yyyy hh:mm tt")</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-section">
+            <h2 class="section-title">
+                <i class="fas fa-align-left"></i> Description
+            </h2>
+            <div class="description-content">
+                @Model.Description
+            </div>
+        </div>
+       <div class="report-header">
+            <a href="@Url.Action("Reports")" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Reports
+            </a>
+       </div>
+
+        @if (Model.Status != "Resolved")
+        {
+            <div class="action-buttons">
+                <a href="@Url.Action("Resolve", new { id = Model.Id })" class="resolve-btn">
+                    <i class="fas fa-check-circle"></i> Mark as Resolved
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+@functions {
+    string GetStatusClass(string status)
+    {
+        return status switch
+        {
+            "Resolved" => "status-resolved",
+            "Pending" => "status-pending",
+            "Error" => "status-error",
+            _ => "status-open",
+        };
+    }
+
+    string GetStatusIcon(string status)
+    {
+        return status switch
+        {
+            "Resolved" => "fas fa-check-circle",
+            "Pending" => "fas fa-clock",
+            "Error" => "fas fa-exclamation-circle",
+            _ => "fas fa-circle",
+        };
+    }
+
+    string GetReportTypeIcon(string reportType)
+    {
+        return reportType switch
+        {
+            "Attendance Issue" => "fas fa-user-clock",
+            "Technical Problem" => "fas fa-laptop-code",
+            "Content Concern" => "fas fa-exclamation-triangle",
+            _ => "fas fa-question-circle",
+        };
+    }
+    }
+
+<style>
+    :root {
+        --ocean-deep: #005a70;
+        --ocean-medium: #0088a7;
+        --ocean-light: #00b4d8;
+        --ocean-accent: #ff9e00;
+        --ocean-alert: #d62828;
+        --ocean-success: #2e8b57;
+        --background-light: #f0f8ff;
+        --text-dark: #222;
+        --text-light: #fff;
+        --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--background-light);
+        color: var(--text-dark);
+        margin: 0;
+        padding: 0;
+    }
+
+    .report-detail-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--ocean-medium);
+        text-decoration: none;
+        margin-bottom: 1rem;
+        transition: color 0.2s;
+    }
+
+        .back-link:hover {
+            color: var(--ocean-deep);
+            text-decoration: underline;
+        }
+
+        .back-link i {
+            transition: transform 0.2s;
+        }
+
+        .back-link:hover i {
+            transform: translateX(-3px);
+        }
+
+    .report-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .report-title {
+        color: var(--ocean-deep);
+        font-size: 1.8rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin: 0;
+    }
+
+    .report-status-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: 600;
+        gap: 0.5rem;
+    }
+
+    .status-open {
+        background-color: rgba(0, 136, 167, 0.1);
+        color: var(--ocean-medium);
+    }
+
+    .status-pending {
+        background-color: rgba(255, 158, 0, 0.1);
+        color: var(--ocean-accent);
+    }
+
+    .status-resolved {
+        background-color: rgba(46, 139, 87, 0.1);
+        color: var(--ocean-success);
+    }
+
+    .status-error {
+        background-color: rgba(214, 40, 40, 0.1);
+        color: var(--ocean-alert);
+    }
+
+    .report-detail-card {
+        background: white;
+        border-radius: 8px;
+        padding: 2rem;
+        box-shadow: var(--card-shadow);
+    }
+
+    .detail-section {
+        margin-bottom: 2rem;
+    }
+
+    .section-title {
+        color: var(--ocean-deep);
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .detail-item {
+        margin-bottom: 1rem;
+    }
+
+    .detail-label {
+        font-weight: 600;
+        color: var(--ocean-deep);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .detail-value {
+        padding-left: 1.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .description-content {
+        background-color: #f9f9f9;
+        padding: 1.5rem;
+        border-radius: 6px;
+        line-height: 1.6;
+        white-space: pre-line;
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 2rem;
+    }
+
+    .resolve-btn {
+        padding: 0.75rem 1.5rem;
+        background-color: var(--ocean-success);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.2s;
+    }
+
+        .resolve-btn:hover {
+            background-color: #267347;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .resolve-btn:active {
+            transform: translateY(0);
+        }
+
+    @@media (max-width: 768px) {
+        .report-detail-container {
+            padding: 0 0.75rem;
+        }
+
+        .report-detail-card {
+            padding: 1.5rem;
+        }
+
+        .detail-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .report-status-badge {
+            position: static;
+            align-self: flex-start;
+        }
+    }
+</style>

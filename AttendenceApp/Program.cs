@@ -28,7 +28,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 app.Use(async (context, next) =>
@@ -40,7 +39,18 @@ app.Use(async (context, next) =>
 
     logging.WriteLog($"[{timestamp}] {method} {path} from {ip}");
 
-    await next(); // Pass control to the next middleware
+    await next(); 
+});
+app.Use(async (context, next) =>
+{
+    await next(); // Process the request
+
+    // If the response status code is 404, redirect to the 404 page
+    if (context.Response.StatusCode == 404 && !context.Response.HasStarted)
+    {
+        context.Request.Path = "/404"; // Route to the 404 page
+        await next();
+    }
 });
 app.UseWebOptimizer();
 app.UseSession();

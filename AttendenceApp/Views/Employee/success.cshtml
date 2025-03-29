@@ -1,43 +1,158 @@
-﻿@{
-    ViewBag.Title = "Success";
+﻿@model SuccessViewModel
+@{
+    ViewBag.Title = "Registration Status";
     Layout = null;
-    TempData["Name"] = @TempData["Name"];
-    ViewBag.Success = @ViewBag.Success;
 }
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<div class="success-container">
-    <i class="fas fa-check-circle success-icon"></i>
-    <h2>Registration Completed !!!</h2>
-    <h3>@TempData["Name"] is Already Registered</h3>
-    <h2 >@ViewBag.Success @TempData["Success"]</h2>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+            --text-dark: #2c3e50;
+            --text-medium: #4a5568;
+            --background-light: #f8f9fa;
+        }
 
-<style>
-    body {
-        font-family: sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f4f4f4;
-        margin: 0;
-        font-weight:bold;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .success-container {
-        text-align: center;
-        background: white;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--background-light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            line-height: 1.6;
+        }
 
-    .success-icon {
-        font-size: 50px;
-        color: green;
-    }
+        .status-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            max-width: 480px;
+            width: 90%;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-    h2 {
-        margin: 1rem;
-    }
-</style>
+            .status-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .status-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+            .status-icon.success {
+                color: var(--success-color);
+                animation: bounce 1s ease;
+            }
+
+            .status-icon.info {
+                color: var(--info-color);
+            }
+
+        h2 {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .employee-name {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(231, 245, 255, 0.3);
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            border: 1px solid rgba(23, 162, 184, 0.1);
+        }
+
+        .message-text {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            margin-top: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .decorative-line {
+            height: 4px;
+            background: linear-gradient(90deg, transparent 0%, rgba(23, 162, 184, 0.3) 50%, transparent 100%);
+            margin: 1.5rem auto;
+            width: 60%;
+        }
+
+        @@keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @@media (max-width: 480px) {
+            .status-card {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="status-card">
+        @if (Model.MessageType == "Success")
+        {
+            <i class="fas fa-check-circle status-icon success"></i>
+        }
+        else
+        {
+            <i class="fas fa-info-circle status-icon info"></i>
+        }
+
+        <h2>@Model.Message</h2>
+
+        <div class="decorative-line"></div>
+
+        @if (!string.IsNullOrEmpty(Model.Name))
+        {
+            <div class="employee-name">
+                <i class="fas fa-user-tag"></i>
+                <span>@Model.Name</span>
+            </div>
+        }
+
+        <p class="message-text">
+            For any inquiries, please contact our events team at
+            <br>
+            <a href="mailto:events@company.com" style="color: var(--info-color); text-decoration: none;">
+                events@company.com
+            </a>
+        </p>
+    </div>
+</body>
+</html>

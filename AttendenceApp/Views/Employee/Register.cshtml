@@ -1,0 +1,166 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Employee Registration";
+
+}
+@{
+    Layout = null;
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --accent-color: #e74c3c;
+        --background-color: #f8f9fa;
+    }
+
+    * {
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: linear-gradient(to right, #2c3e50, #3498db);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 500px;
+        padding: 2rem;
+    }
+
+    .registration-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+
+    .form-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--primary-color);
+    }
+
+    .input-group {
+        position: relative;
+        width: 100%;
+    }
+
+    .form-control {
+        padding-left: 40px;
+        height: 45px;
+        width: 100%;
+        border-radius: 8px;
+        border: 2px solid #e0e0e0;
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: none;
+        }
+
+    .btn-primary {
+        width: 100%;
+        background: linear-gradient(to right, #3498db, #2980b9);
+        border: none;
+        padding: 12px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        color: white;
+        border-radius: 8px;
+    }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #2980b9, #2c3e50);
+            transform: translateY(-1px);
+        }
+
+    .title {
+        color: var(--primary-color);
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+
+    .validation-message {
+        color: var(--accent-color);
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+    }
+
+    .alert-success{
+        color:green;
+    }
+</style>
+
+<div class="container">
+    <div class="registration-card">
+        <h2 class="title"><i class="fas fa-user-plus me-2"></i> Employee Registration</h2>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+
+        <form method="post">
+            <!-- Employee ID -->
+            <div class="form-group">
+                <label>Employee ID</label>
+                <div class="input-group">
+                    <span class="form-icon"><i class="fas fa-id-badge"></i></span>
+                    <input asp-for="EmployeeID" class="form-control" placeholder="Enter Employee ID" />
+                </div>
+                <span asp-validation-for="EmployeeID" class="validation-message"></span>
+            </div>
+
+            <!-- Full Name -->
+            <div class="form-group">
+                <label>Full Name</label>
+                <div class="input-group">
+                    <span class="form-icon"><i class="fas fa-user"></i></span>
+                    <input asp-for="Name" class="form-control" placeholder="Enter Full Name" />
+                </div>
+                <span asp-validation-for="Name" class="validation-message"></span>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label>Email Address</label>
+                <div class="input-group">
+                    <span class="form-icon"><i class="fas fa-envelope"></i></span>
+                    <input asp-for="Email" class="form-control" placeholder="Enter Email Address" />
+                </div>
+                <span asp-validation-for="Email" class="validation-message"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-user-check me-2"></i> Register Employee
+            </button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

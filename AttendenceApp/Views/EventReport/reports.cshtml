@@ -1,0 +1,350 @@
+﻿@model IEnumerable<AttendenceApp.Models.EventReport>
+@{
+    ViewData["Title"] = "Event Reports";
+    Layout = "_Layout"; // Use your shared layout
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ocean-deep: #005a70;
+            --ocean-medium: #0088a7;
+            --ocean-light: #00b4d8;
+            --ocean-accent: #ff9e00;
+            --ocean-alert: #d62828;
+            --ocean-success: #2e8b57;
+            --background-light: #f0f8ff;
+            --text-dark: #222;
+            --text-light: #fff;
+            --table-border: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        .reports-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .page-title {
+            color: var(--ocean-deep);
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .reports-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+            .reports-table th {
+                background-color: var(--ocean-deep);
+                color: white;
+                padding: 1rem;
+                text-align: left;
+                font-weight: 600;
+            }
+
+            .reports-table td {
+                padding: 1rem;
+                border-bottom: 1px solid var(--table-border);
+                vertical-align: middle;
+            }
+
+            .reports-table tr:last-child td {
+                border-bottom: none;
+            }
+
+            .reports-table tr:hover {
+                background-color: rgba(0, 180, 216, 0.05);
+            }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            gap: 0.5rem;
+            font-weight:bold;
+        }
+
+        .status-pending {
+            background-color: rgba(255, 158, 0, 0.1);
+            color: var(--ocean-accent);
+        }
+
+        .status-resolved {
+            background-color: rgba(46, 139, 87, 0.1);
+            color: var(--ocean-success);
+        }
+
+        .status-open {
+            background-color: rgba(0, 136, 167, 0.1);
+            color: var(--ocean-medium);
+        }
+
+        .status-error {
+            background-color: rgba(214, 40, 40, 0.1);
+            color: var(--ocean-alert);
+        }
+
+        .action-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .view-btn {
+            background-color: var(--ocean-medium);
+            color: white;
+        }
+
+            .view-btn:hover {
+                background-color: var(--ocean-deep);
+            }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--ocean-medium);
+        }
+
+            .empty-state i {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+                color: var(--ocean-light);
+            }
+
+        .search-filter {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--table-border);
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .filter-select {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--table-border);
+            border-radius: 6px;
+            background-color: white;
+            font-size: 1rem;
+        }
+
+        @@media (max-width: 768px) {
+            .reports-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .page-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .search-filter {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reports-container">
+        <div class="page-header">
+            <h1 class="page-title">
+                <i class="fas fa-flag"></i> Event Reports
+            </h1>
+        </div>
+
+        <div class="search-filter">
+            <input type="text" class="search-input" placeholder="Search reports...">
+            <select class="filter-select">
+                <option value="">All Status</option>
+                <option value="open">Open</option>
+                <option value="pending">Pending</option>
+                <option value="resolved">Resolved</option>
+            </select>
+        </div>
+
+        @if (Model.Any())
+        {
+            <table class="reports-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Event</th>
+                        <th>Employee ID</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Submitted</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var report in Model)
+                    {
+                        <tr>
+                            <td>@report.Id</td>
+                            <td>
+                                <i class="fas fa-calendar-alt"></i> @report.Event?.Name
+                            </td>
+                            <td>
+                               
+                                <i class="fas fa-user"></i> @report.EmployeeId
+                            </td>
+                            <td>
+                                @switch (report.ReportType)
+                                {
+                                    case "Attendance Issue":
+                                        <i class="fas fa-user-clock"></i>
+                                        break;
+                                    case "Technical Problem":
+                                        <i class="fas fa-laptop-code"></i>
+                                        break;
+                                    case "Content Concern":
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        break;
+                                    default:
+                                        <i class="fas fa-question-circle"></i>
+                                        break;
+                                }
+                                @report.ReportType
+                            </td>
+                            <td>
+                                @if (report.Description.Length > 50)
+                                {
+                                    @report.Description.Substring(0, 50)
+
+                                    <text>...</text>
+                                }
+                                else
+                                {
+                                    @report.Description
+                                }
+                            </td>
+                            <td>
+                                @{
+                                    var statusClass = "status-open";
+                                    var statusIcon = "fa-circle";
+                                    var statusText = "Open";
+
+                                    if (report.Status == "Resolved")
+                                    {
+                                        statusClass = "status-resolved";
+                                        statusIcon = "fa-check-circle";
+                                        statusText = "Resolved";
+                                    }
+                                    else if (report.Status == "Pending")
+                                    {
+                                        statusClass = "status-pending";
+                                        statusIcon = "fa-clock";
+                                        statusText = "Pending";
+                                    }
+                                    else if (report.Status == "Error")
+                                    {
+                                        statusClass = "status-error";
+                                        statusIcon = "fa-exclamation-circle";
+                                        statusText = "Error";
+                                    }
+                                }
+                                <span class="status-badge @statusClass">
+                                    <i class="fas @statusIcon"></i> @statusText
+                                </span>
+                            </td>
+                            <td>
+                                <i class="far fa-clock"></i> @report.SubmittedOn.ToString("MMM dd, yyyy")
+                            </td>
+                            <td>
+                                <a href="@Url.Action("ViewReport", new { id = report.Id })" class="action-btn view-btn">
+                                    <i class="fas fa-eye"></i> View
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="empty-state">
+                <i class="far fa-folder-open"></i>
+                <h3>No Reports Found</h3>
+                <p>There are currently no event reports to display.</p>
+            </div>
+        }
+    </div>
+
+    <script>
+        // Simple search functionality
+        document.querySelector('.search-input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('.reports-table tbody tr');
+
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        });
+
+        // Filter by status
+        document.querySelector('.filter-select').addEventListener('change', function(e) {
+            const filterValue = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('.reports-table tbody tr');
+
+            rows.forEach(row => {
+                if (!filterValue) {
+                    row.style.display = '';
+                    return;
+                }
+
+                const status = row.querySelector('.status-badge').textContent.toLowerCase().trim();
+                row.style.display = status.includes(filterValue) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

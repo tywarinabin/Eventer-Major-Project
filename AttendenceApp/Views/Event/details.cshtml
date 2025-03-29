@@ -1,361 +1,587 @@
 ﻿@model Event
 
 @{
-	ViewData["Title"] = "Event Details";
+    ViewData["Title"] = "Event Details";
 }
 
 <div class="container">
-	<div class="event-header">
-		<h1 class="event-title">
-			<i class="fas fa-calendar-alt"></i> @Model.Name
-			<span class="event-status @Model.Status.ToLower()">@Model.Status</span>
-		</h1>
-	</div>
+    <div class="event-header">
+        <h1 class="event-title">
+            <i class="fas fa-calendar-day event-main-icon"></i> @Model.Name
+            <span class="event-status @Model.Status.ToLower()">
+                <i class="status-icon @GetStatusIcon(Model.Status)"></i> @Model.Status
+            </span>
+        </h1>
+    </div>
 
-	<div class="event-detail-card">
-		<div class="event-meta">
-			<div class="meta-item">
-				<i class="fas fa-tag"></i>
-				<span>Type:</span>
-				<strong>@Model.EventType</strong>
-			</div>
-			<div class="meta-item">
-				<i class="fas fa-users"></i>
-				<span>Participants:</span>
-				<strong>@ViewBag.ParticipantCount</strong>
-			</div>
-			<div class="meta-item">
-				<i class="fas fa-calendar-plus"></i>
-				<span>Created:</span>
-				<strong>@Model.Created.ToString("MMM dd, yyyy")</strong>
-			</div>
-			<div class="meta-item">
-				<a asp-action="showattendance" asp-controller="Event" asp-route-id="@Model.Id" class="attendance-btn">
-					<i class="fas fa-calendar-check"></i> Attendance
-				</a>
+    <div class="event-detail-card">
+        <div class="event-meta">
+            <div class="meta-item">
+                <i class="fas fa-tags meta-icon"></i>
+                <span>Type:</span>
+                <strong>@Model.EventType</strong>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-user-friends meta-icon"></i>
+                <span>Participants:</span>
+                <strong>@ViewBag.ParticipantCount</strong>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-calendar-plus meta-icon"></i>
+                <span>Created:</span>
+                <strong>@Model.Created.ToString("MMM dd, yyyy")</strong>
+            </div>
+            <div class="meta-item">
+                <a asp-action="ShowAttendance" asp-controller="Event" asp-route-id="@Model.Id" asp-route-eventName="@Model.Name.ToLower().Replace(" ", "-")" class="attendance-btn">
+                    <i class="fas fa-clipboard-check"></i> Attendance
+                </a>
+            </div>
+        </div>
 
+        <div class="event-content">
+            <h3 class="section-title"><i class="fas fa-file-alt section-icon"></i> Description</h3>
+            <p class="event-description">@Model.Description</p>
 
-			</div>
-		</div>
+            <div class="timeline">
+                <div class="time-item">
+                    <i class="fas fa-play-circle timeline-icon start-icon"></i>
+                    <div class="time-content">
+                        <span class="time-label">Start Date</span>
+                        <span class="time-value">@Model.StartDate.ToString("MMMM dd, yyyy - hh:mm tt")</span>
+                    </div>
+                </div>
+                @if (Model.EndDate.HasValue)
+                {
+                    <div class="time-item">
+                        <i class="fas fa-flag-checkered timeline-icon end-icon"></i>
+                        <div class="time-content">
+                            <span class="time-label">End Date</span>
+                            <span class="time-value">@Model.EndDate.Value.ToString("MMMM dd, yyyy - hh:mm tt")</span>
+                        </div>
+                    </div>
+                }
+                <div id="qrcode-container" class="qr-container">
+                    <div id="qrcode"></div>
+                    <div id="qr-instructions" class="qr-instructions">
+                        <i class="fas fa-qrcode instruction-icon"></i> Click "Generate QR Code" to display scanner
+                    </div>
+                </div>
+                <button id="shareBtn" class="share-btn" style="display: none;">
+                    <i class="fas fa-share-square"></i> Share Event
+                </button>
+            </div>
 
-		<div class="event-content">
-			<h3 class="section-title"><i class="fas fa-align-left"></i> Description</h3>
-			<p class="event-description">@Model.Description</p>
+            @if (Model.EndDate.HasValue)
+            {
+                <div class="duration-container">
+                    <div class="duration-badge">
+                        <i class="fas fa-stopwatch duration-icon"></i>
+                        Total Duration: @GetEventDuration(Model) Minutes.
+                    </div>
+                </div>
+            }
+        </div>
 
-			<div class="timeline">
-				<div class="time-item">
-					<i class="fas fa-play-circle"></i>
-					<div class="time-content">
-						<span class="time-label">Start Date</span>
-						<span class="time-value">@Model.StartDate.ToString("MMMM dd, yyyy - hh:mm tt")</span>
-					</div>
-				</div>
-				@if (Model.EndDate.HasValue)
-				{
-					<div class="time-item">
-						<i class="fas fa-flag-checkered"></i>
-						<div class="time-content">
-							<span class="time-label">End Date</span>
-							<span class="time-value">@Model.EndDate.Value.ToString("MMMM dd, yyyy - hh:mm tt")</span>
-						</div>
-					</div>
-				}
-				<div id="qrcode"></div>
-				<button class ="open-participation-btn" id="shareBtn" class="share-btn" style="display: none; margin-top:1rem;">Share Link</button>
-			</div>
-
-			@if (Model.EndDate.HasValue)
-			{
-				<div class="durat">
-					<div class="duration-badge">
-						<i class="fas fa-hourglass-half"></i>
-						Total Duration: @GetEventDuration(Model) Minutes.
-					</div>
-					
-
-				</div>
-			}
-		</div>
-
-		<div class="event-actions">
-			<a id="openParticipationBtn"
-			   asp-action="OpenParticipation"
-			   asp-controller="Event"
-			   asp-route-id="@Model.Id"
-			   asp-route-title="@Model.Name"
-			   class="open-participation-btn">
-				<i class="fas fa-door"></i> Open Participation
-			</a>
-			<button id="generateQR" class="qr-btn">Generate QR Code</button>
-
-			<!-- QR Code Container -->
-			
-			<a asp-action="Events" class="back-btn">
-				<i class="fas fa-arrow-left"></i> Back to Events
-			</a>
-		</div>
-	</div>
+        <div class="event-actions">
+            <a id="openParticipationBtn"
+               asp-action="OpenParticipation"
+               asp-controller="Event"
+               asp-route-id="@Model.Id"
+               asp-route-title="@Model.Name"
+               class="btn open-participation-btn">
+                <i class="fas fa-door-open"></i> Open Participation
+            </a>
+            <button id="generateQR" class="btn qr-btn">
+                <i class="fas fa-expand"></i> Generate QR Code
+            </button>
+            <a asp-action="Events" class="btn back-btn">
+                <i class="fas fa-chevron-circle-left"></i> Back to Events
+            </a>
+        </div>
+    </div>
 </div>
 
 <style>
-	/* Consistent with existing color scheme */
-	:root {
-		--primary-color: #2A4365;
-		--secondary-color: #4299E1;
-		--accent-color: #48BB78;
-		--light-bg: #EBF8FF;
-		--text-dark: #2D3748;
-		--text-light: #FFFFFF;
-	}
+    /* Color Variables */
+    :root {
+        --primary-color: #2A4365;
+        --primary-light: #4299E1;
+        --secondary-color: #48BB78;
+        --accent-color: #9F7AEA;
+        --danger-color: #E53E3E;
+        --warning-color: #DD6B20;
+        --info-color: #38B2AC;
+        --light-bg: #EBF8FF;
+        --text-dark: #2D3748;
+        --text-light: #FFFFFF;
+        --gray-light: #E2E8F0;
+        --gray-medium: #A0AEC0;
+    }
 
-	.container {
-		max-width: 1200px;
-		margin: 2rem auto;
-		padding: 0 2rem;
-	}
+    /* Base Styles */
+    .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
 
-	.event-header {
-		margin-bottom: 2rem;
-		padding: 1rem 0;
-		border-bottom: 2px solid var(--primary-color);
-	}
+    /* Header Styles */
+    .event-header {
+        margin-bottom: 2rem;
+        padding: 1rem 0;
+        border-bottom: 2px solid var(--primary-color);
+    }
 
-	.event-title {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-		color: var(--primary-color);
-		font-size: 2.2rem;
-	}
+    .event-title {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: var(--primary-color);
+        font-size: 2.2rem;
+        flex-wrap: wrap;
+    }
 
-	.event-status {
-		font-size: 1rem;
-		padding: 0.3rem 1rem;
-		border-radius: 20px;
-		background: #e2e8f0;
-		color: var(--text-dark);
-	}
+    .event-main-icon {
+        color: var(--accent-color);
+        font-size: 1.8rem;
+    }
 
-		.event-status.active {
-			background: var(--accent-color);
-			color: var(--text-light);
-		}
+    .event-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+        padding: 0.4rem 1.2rem;
+        border-radius: 20px;
+        background: var(--gray-light);
+        color: var(--text-dark);
+        font-weight: 600;
+    }
 
-		.event-status.completed {
-			background: #a0aec0;
-			color: red;
-		}
+    .status-icon {
+        font-size: 0.9rem;
+    }
 
-	.event-detail-card {
-		background: var(--text-light);
-		border-radius: 12px;
-		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-		padding: 2rem;
-	}
+    .event-status.active {
+        background: linear-gradient(135deg, var(--secondary-color), #38a169);
+        color: var(--text-light);
+    }
 
-	.event-meta {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: 1.5rem;
-		margin-bottom: 2rem;
-		padding: 1.5rem;
-		background: var(--light-bg);
-		border-radius: 8px;
-	}
+    .event-status.completed {
+        background: linear-gradient(135deg, var(--gray-medium), #718096);
+        color: var(--text-light);
+    }
 
-	.meta-item {
-		display: flex;
-		align-items: center;
-		gap: 0.8rem;
-		font-size: 1.1rem;
-		color: var(--text-dark);
-	}
+    .event-status.pending {
+        background: linear-gradient(135deg, var(--warning-color), #C05621);
+        color: var(--text-light);
+    }
 
-		.meta-item i {
-			color: var(--secondary-color);
-			width: 25px;
-			text-align: center;
-		}
+    /* Card Styles */
+    .event-detail-card {
+        background: var(--text-light);
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+    }
 
-	.event-content {
-		margin: 2rem 0;
-	}
+    /* Meta Information */
+    .event-meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: var(--light-bg);
+        border-radius: 8px;
+    }
 
-	.section-title {
-		color: var(--primary-color);
-		font-size: 1.5rem;
-		margin-bottom: 1.5rem;
-		display: flex;
-		align-items: center;
-		gap: 0.8rem;
-	}
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 1.1rem;
+        color: var(--text-dark);
+    }
 
-	.event-description {
-		color: var(--text-dark);
-		font-size: 1.1rem;
-		line-height: 1.8;
-		margin-bottom: 2rem;
-		padding: 1rem;
-		background: #f8fafc;
-		border-radius: 8px;
-	}
+    .meta-icon {
+        color: var(--accent-color);
+        width: 25px;
+        text-align: center;
+        font-size: 1.2rem;
+    }
 
-	.timeline {
-		border-left: 3px solid var(--secondary-color);
-		margin: 2rem 0;
-		padding-left: 2rem;
-	}
+    /* Content Styles */
+    .event-content {
+        margin: 2rem 0;
+    }
 
-	.time-item {
-		position: relative;
-		margin-bottom: 2rem;
-		padding-left: 2rem;
-	}
+    .section-title {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
 
-		.time-item i {
-			position: absolute;
-			left: -1.2rem;
-			top: 0;
-			background: var(--text-light);
-			color: var(--secondary-color);
-			font-size: 1.5rem;
-		}
+    .section-icon {
+        color: var(--info-color);
+        font-size: 1.3rem;
+    }
 
-	.time-label {
-		display: block;
-		color: #718096;
-		font-size: 0.9rem;
-		margin-bottom: 0.5rem;
-	}
+    .event-description {
+        color: var(--text-dark);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        background: #f8fafc;
+        border-radius: 8px;
+        border-left: 4px solid var(--accent-color);
+    }
 
-	.time-value {
-		font-weight: 600;
-		color: var(--text-dark);
-		font-size: 1.1rem;
-	}
+    /* Timeline Styles */
+    .timeline {
+        border-left: 3px solid var(--primary-light);
+        margin: 2rem 0;
+        padding-left: 2rem;
+        position: relative;
+    }
 
-	.duration-badge {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.8rem;
-		padding: 0.8rem 1.5rem;
-		background: var(--light-bg);
-		color: var(--secondary-color);
-		border-radius: 25px;
-		font-weight: 600;
-		margin: 1rem 0;
-	}
+    .time-item {
+        position: relative;
+        margin-bottom: 2rem;
+        padding-left: 2rem;
+    }
 
-	.back-btn, #generateQR {
-		display: inline-flex;
-		align-items: center;
-		cursor:pointer;
-		gap: 0.8rem;
-		padding: 0.8rem 2rem;
-		background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-		color: var(--text-light);
-		border-radius: 8px;
-		text-decoration: none;
-		transition: transform 0.3s ease;
-	}
+    .timeline-icon {
+        position: absolute;
+        left: -1.2rem;
+        top: 0;
+        background: var(--text-light);
+        font-size: 1.5rem;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 2px solid;
+    }
 
-		.back-btn:hover {
-			transform: translateY(-2px);
-			box-shadow: 0 5px 15px rgba(66, 153, 225, 0.3);
-		}
+    .start-icon {
+        color: var(--secondary-color);
+        border-color: var(--secondary-color);
+    }
 
-	.attendance-btn {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.8rem;
-		padding: 0.8rem 2rem;
-		background: linear-gradient(145deg,yellow, crimson);
-		color: black;
-		border-radius: 8px;
-		text-decoration: none;
-		font-weight: bold;
-		transition: transform 0.3s ease;
-	}
+    .end-icon {
+        color: var(--danger-color);
+        border-color: var(--danger-color);
+    }
 
-	.event-actions {
-		display: flex;
-		gap: 1rem;
-		flex-wrap: wrap;
-	}
+    .time-label {
+        display: block;
+        color: var(--gray-medium);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
 
-	.open-participation-btn {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.8rem;
-		padding: 0.8rem 2rem;
-		background: var(--accent-color);
-		color: var(--text-light);
-		font-weight:bold;
-		border-radius: 8px;
-		text-decoration: none;
-		transition: transform 0.3s ease;
-	}
+    .time-value {
+        font-weight: 600;
+        color: var(--text-dark);
+        font-size: 1.1rem;
+    }
 
-		.open-participation-btn:hover {
-			transform: translateY(-2px);
-			box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
-		}
+    /* Duration Styles */
+    .duration-container {
+        margin: 1.5rem 0;
+    }
 
-	@@media (max-width: 768px) {
-		.container {
-			padding: 0 1rem;
-		}
+    .duration-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.8rem 1.5rem;
+        background: var(--light-bg);
+        color: var(--primary-color);
+        border-radius: 25px;
+        font-weight: 600;
+        border: 1px solid var(--gray-light);
+    }
 
-		.event-title {
-			font-size: 1.8rem;
-			flex-direction: column;
-			align-items: start;
-		}
+    .duration-icon {
+        color: var(--warning-color);
+        font-size: 1.2rem;
+    }
 
-		.event-meta {
-			grid-template-columns: 1fr;
-		}
-	}
+    /* QR Code Styles */
+    .qr-container {
+        margin: 2rem 0;
+        text-align: center;
+        padding: 1.5rem;
+        background: #f8fafc;
+        border-radius: 8px;
+        border: 1px dashed var(--gray-light);
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #qrcode {
+        margin: 0 auto;
+        padding: 10px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .qr-instructions {
+        margin-top: 1rem;
+        color: var(--gray-medium);
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .instruction-icon {
+        color: var(--accent-color);
+        font-size: 1.1rem;
+    }
+
+    /* Button Styles */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        padding: 0.8rem 1.8rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+        color: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .event-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+
+    .open-participation-btn {
+        background: linear-gradient(135deg, var(--secondary-color), #38a169);
+    }
+
+        .open-participation-btn:hover {
+            background: linear-gradient(135deg, #38a169, var(--secondary-color));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.4);
+        }
+
+    .qr-btn {
+        background: linear-gradient(135deg, var(--primary-color), #1E365B);
+    }
+
+        .qr-btn:hover {
+            background: linear-gradient(135deg, #1E365B, var(--primary-color));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(42, 67, 101, 0.4);
+        }
+
+    .back-btn {
+        background: linear-gradient(135deg, var(--gray-medium), #718096);
+    }
+
+        .back-btn:hover {
+            background: linear-gradient(135deg, #718096, var(--gray-medium));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(113, 128, 150, 0.4);
+        }
+
+    .share-btn {
+        background: linear-gradient(135deg, var(--warning-color), #C05621);
+        margin-top: 1rem;
+    }
+
+        .share-btn:hover {
+            background: linear-gradient(135deg, #C05621, var(--warning-color));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(221, 107, 32, 0.4);
+        }
+
+    .attendance-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.8rem 1.5rem;
+        background: linear-gradient(135deg, var(--accent-color), #805AD5);
+        color: var(--text-light);
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+        .attendance-btn:hover {
+            background: linear-gradient(135deg, #805AD5, var(--accent-color));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(159, 122, 234, 0.4);
+        }
+
+    /* Responsive Styles */
+    @@media (max-width: 768px) {
+        .container {
+            padding: 0 1rem;
+        }
+
+        .event-title {
+            font-size: 1.8rem;
+        }
+
+        .event-meta {
+            grid-template-columns: 1fr;
+        }
+
+        .event-actions {
+            flex-direction: column;
+        }
+
+        .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .timeline {
+            padding-left: 1.5rem;
+        }
+
+        .time-item {
+            padding-left: 1.5rem;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .event-title {
+            font-size: 1.5rem;
+        }
+
+        .event-detail-card {
+            padding: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+        }
+
+        .time-value {
+            font-size: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1rem;
+            font-size: 0.9rem;
+        }
+    }
 </style>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-	 document.getElementById("generateQR").addEventListener("click", function () {
-		var btn = document.getElementById("openParticipationBtn");
-		var qrContainer = document.getElementById("qrcode");
-		var shareBtn = document.getElementById("shareBtn");
+    document.getElementById("generateQR").addEventListener("click", function () {
+        var btn = document.getElementById("openParticipationBtn");
+        var qrContainer = document.getElementById("qrcode");
+        var qrInstructions = document.getElementById("qr-instructions");
+        var shareBtn = document.getElementById("shareBtn");
 
-		qrContainer.innerHTML = ""; // Clear old QR
+        // Clear old QR and instructions
+        qrContainer.innerHTML = "";
+        if (qrInstructions) qrInstructions.style.display = "none";
 
-		var qrUrl = btn.href; // Get the button's URL
-		new QRCode(qrContainer, {
-			text: qrUrl,
-			width: 200,
-			height: 200
-		});
+        // Generate new QR
+        var qrUrl = btn.href;
+        new QRCode(qrContainer, {
+            text: qrUrl,
+            width: 200,
+            height: 200,
+            colorDark: "#2A4365",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
 
-		// Show Share button after QR is generated
-		shareBtn.style.display = "block";
+        // Style the QR canvas for better appearance
+        var canvas = qrContainer.querySelector("canvas");
+        if (canvas) {
+            canvas.style.borderRadius = "8px";
+            canvas.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
+            canvas.style.border = "1px solid #e2e8f0";
+        }
 
-		// Update Share button functionality
-		shareBtn.onclick = function () {
-			if (navigator.share) {
-				navigator.share({
-					title: "Open Participation",
-					text: "Join the event using this link:",
-					url: qrUrl
-				}).catch(err => console.log("Sharing failed", err));
-			} else {
-				alert("Sharing not supported in this browser. Copy the link manually: " + qrUrl);
-			}
-		};
-	});
+        // Show Share button
+        shareBtn.style.display = "inline-flex";
+
+        // Update Share button functionality
+        shareBtn.onclick = function () {
+            if (navigator.share) {
+                navigator.share({
+                    title: "Join Event: @Model.Name",
+                    text: "Scan the QR code or use this link to participate:",
+                    url: qrUrl
+                }).catch(err => console.log("Sharing failed", err));
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                const tempInput = document.createElement("input");
+                document.body.appendChild(tempInput);
+                tempInput.value = qrUrl;
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+
+                // Show feedback
+                const originalText = shareBtn.innerHTML;
+                shareBtn.innerHTML = '<i class="fas fa-check"></i> Link Copied!';
+                setTimeout(() => {
+                    shareBtn.innerHTML = originalText;
+                }, 2000);
+            }
+        };
+
+        // Scroll to QR code for better visibility
+        qrContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Change generate button to indicate success
+        const qrBtn = document.getElementById("generateQR");
+        qrBtn.innerHTML = '<i class="fas fa-check-circle"></i> QR Generated';
+        qrBtn.style.background = "linear-gradient(135deg, var(--secondary-color), #38a169)";
+    });
 </script>
-@functions {
-	int GetEventDuration(Event eventItem)
-	{
-		if (!eventItem.EndDate.HasValue || eventItem.StartDate > eventItem.EndDate.Value)
-			return 0; // Prevents negative duration or null EndDate
 
-		return (int)Math.Ceiling((eventItem.EndDate.Value - eventItem.StartDate).TotalMinutes);
-	}
+@functions {
+    int GetEventDuration(Event eventItem)
+    {
+        if (!eventItem.EndDate.HasValue || eventItem.StartDate > eventItem.EndDate.Value)
+            return 0;
+
+        return (int)Math.Ceiling((eventItem.EndDate.Value - eventItem.StartDate).TotalMinutes);
+    }
+
+    string GetStatusIcon(string status)
+    {
+        switch (status.ToLower())
+        {
+            case "active": return "fas fa-bolt";
+            case "completed": return "fas fa-check-circle";
+            case "pending": return "fas fa-clock";
+            default: return "fas fa-info-circle";
+        }
+    }
 }

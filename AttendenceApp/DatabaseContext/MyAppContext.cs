@@ -13,6 +13,8 @@ namespace AttendenceApp.DatabaseContext
         public DbSet<Employee> Employees { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Event> Events { get; set; }
+        public DbSet<EventReport> EventReports { get; set; }
+        public DbSet<EventFeedback> EventFeedbacks { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -25,15 +27,16 @@ namespace AttendenceApp.DatabaseContext
         {
             modelBuilder.Entity<Attendance>()
                 .HasOne(a => a.Event)
-                .WithMany(e => e.Attendances)
+                .WithMany(e => e.Attendances) // Explicitly defining the navigation property
                 .HasForeignKey(a => a.EventId)
-                .OnDelete(DeleteBehavior.Cascade);  // ✅ Keep cascade delete for Event
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Attendance>()
                 .HasOne(a => a.Employee)
-                .WithMany()  // ⛔ No navigation property needed to prevent cycle
+                .WithMany(e => e.Attendances) // Explicitly reference Attendances in Employee
                 .HasForeignKey(a => a.EmployeeId)
-                .OnDelete(DeleteBehavior.NoAction);  // ✅ Disable cascade delete for User
+                .OnDelete(DeleteBehavior.Restrict); // Prevents accidental deletion of Employees with records
         }
+
     }
 }

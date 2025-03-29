@@ -1,4 +1,6 @@
 ﻿using AttendenceApp.DatabaseContext;
+using AttendenceApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +23,7 @@ namespace AttendenceApp.Controllers
         //    return View()
         //}
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> OpenParticipation(int eventId)
         {
             var eventModel = await _context.Events.FirstOrDefaultAsync(e => e.Id == eventId);
@@ -34,6 +37,7 @@ namespace AttendenceApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> OpenParticipation(int eventId, int employeeId)
         {
             //Console.WriteLine($"Received eventId: {eventId}, employeeId: {employeeId}");
@@ -54,9 +58,10 @@ namespace AttendenceApp.Controllers
             if (eventModel.EndDate<=DateTime.UtcNow )
             {
 
-                TempData["Success"]= "Event registration is already Closed. Thank You.";
-              
-                return RedirectToAction("success", "Employee"); 
+                TempData["Success"] = "Event registration is already closed. Thank you for your interest.";
+                TempData["MessageType"] = "Info";
+                TempData.Keep();
+                return RedirectToAction("Success", "Employee");
             }
 
             var user = await _context.Employees.FirstOrDefaultAsync(u => u.EmployeeID == (employeeId).ToString());
@@ -71,12 +76,12 @@ namespace AttendenceApp.Controllers
 
             if (existingAttendance)
             {
+                TempData["Success"] = $"{user.Name} is already registered for this event.";
                 TempData["Name"] = user.Name;
+                TempData["MessageType"] = "Info";
+                TempData.Keep();
+                return RedirectToAction("Success", "Employee");
 
-                TempData["Success"] = $"This employee  {user.Name} is already registered for the event.";
-
-                return RedirectToAction("success", "Employee");
-               
             }
 
             var attendance = new Attendance
@@ -92,9 +97,11 @@ namespace AttendenceApp.Controllers
                 //_context.Events.Update()
                 await _context.SaveChangesAsync();
 
-                TempData["Success"] = "Registration successful!";
+                TempData["Success"] = "Registration completed successfully!";
                 TempData["Name"] = user.Name;
-                return View("success", user);
+                TempData["MessageType"] = "Success";
+                TempData.Keep();
+                return RedirectToAction("Success", "Employee");
             }
             catch (DbUpdateException)
             {
@@ -144,10 +151,54 @@ namespace AttendenceApp.Controllers
             return View(employee);
         }
         [Route("/registration/success")]
-        public IActionResult Success()
+        [AllowAnonymous]
+        public ActionResult Success()
         {
-           
-            return View();
+            var model = new SuccessViewModel
+            {
+                Name = TempData["Name"] as string,
+                Message = TempData["Success"] as string,
+                MessageType = TempData["MessageType"] as string ?? "Info"
+            };
+            TempData.Keep("Name");
+            TempData.Keep("Success");
+            TempData.Keep("MessageType");
+
+            return View(model);
+        }
+
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Register()
+        {
+
+            return View(new Employee());
+        }
+
+        // POST: Employee/Register
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<IActionResult> Register(Employee model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Check if EmployeeID already exists
+                bool exists = await _context.Employees.AnyAsync(e => e.EmployeeID == model.EmployeeID);
+
+                if (exists)
+                {
+                    ModelState.AddModelError("EmployeeID", "Employee ID already exists.");
+                    return View(model); // Return the view with validation error
+                }
+
+                _context.Employees.Add(model);
+                await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Employee registered successfully!";
+                return RedirectToAction("Register");
+            }
+
+            return View(model);
         }
 
     }

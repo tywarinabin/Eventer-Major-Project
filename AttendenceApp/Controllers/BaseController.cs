@@ -20,5 +20,9 @@ namespace AttendenceApp.Controllers
 
             base.OnActionExecuting(context);
         }
+        public IActionResult NotFound()
+        {
+            return View("NotFound"); // Render the custom 404 page
+        }
     }
 }

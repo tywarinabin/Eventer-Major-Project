@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using AttendenceApp.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace AttendenceApp.Controllers
 {
@@ -15,6 +16,13 @@ namespace AttendenceApp.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            var userId = Request.Cookies["UserId"];
+            var userName = Request.Cookies["UserName"];
+
+            if (userId != null && userName != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
         [HttpPost]
@@ -33,14 +41,28 @@ namespace AttendenceApp.Controllers
             HttpContext.Session.SetString("UserId", user.UserId.ToString());
             HttpContext.Session.SetString("UserName", user.Name);
 
+            // Store user data in cookies
+            CookieOptions options = new CookieOptions
+            {
+                Expires = DateTime.UtcNow.AddHours(1), // Set expiration time for 1 hour
+                HttpOnly = true, // Prevent JavaScript access (security best practice)
+                Secure = true, // Use secure cookies (recommended for HTTPS)
+                SameSite = SameSiteMode.Strict // Prevent CSRF attacks
+            };
+
+            // Set cookies
+           
+
             return RedirectToAction("Index", "Home");
         }
         public IActionResult Logout()
         {
-            HttpContext.Session.Clear();
-            return RedirectToAction("index","login"); 
+            return RedirectToAction("index", "login");
         }
-
+        public IActionResult NotFound()
+        {
+            return View("NotFound"); // Render the custom 404 page
+        }
 
     }
 }

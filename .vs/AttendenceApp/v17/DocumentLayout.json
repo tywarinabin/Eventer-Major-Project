@@ -3,120 +3,16 @@
   "WorkspaceRootPath": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\event\\openparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\event\\openparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\employee\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\employee\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\employee\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\employee\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\logging\\log.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\logging\\log.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\logging\\logrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\logging\\logrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\event\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\event\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\employee\\openparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\employee\\openparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\event\\showattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\event\\showattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\employee\\viewemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\employee\\viewemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\employee\\createparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\employee\\createparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\event\\events.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\event\\events.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\models\\eventreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\models\\eventreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\event\\eventregistration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\event\\eventregistration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\databasecontext\\myappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\databasecontext\\myappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\event\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\event\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -127,32 +23,199 @@
       "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\models\\attendence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\attendenceapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\attendenceapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\event\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\event\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\eventreport\\reportevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\eventreport\\reportevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\controllers\\eventreportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\controllers\\eventreportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\models\\eventreportviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\models\\eventreportviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\eventreport\\viewreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\eventreport\\viewreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\eventreport\\resolve.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\eventreport\\resolve.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\eventreport\\reports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\eventreport\\reports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\eventreport\\reportlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\eventreport\\reportlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\event\\openparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\event\\openparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\event\\eventregistration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\event\\eventregistration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\event\\events.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\event\\events.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\employee\\openparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\employee\\openparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\event\\showattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\event\\showattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\employee\\createparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\employee\\createparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\home\\employees.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\home\\employees.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\attendenceapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\attendenceapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\event\\eventdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\event\\eventdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\models\\eventfeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\models\\eventfeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EventEPAM_DEV/True/SqlTable/dbo.EventReports.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\models\\successviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\models\\successviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\databasecontext\\myappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\databasecontext\\myappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\shared\\notfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\shared\\notfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\employee\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\employee\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Migrations\\20250321084024_m1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AttendenceApp\\Migrations\\20250321084024_m1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Migrations\\20250321083411_m1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AttendenceApp\\Migrations\\20250321083411_m1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\logging\\log.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\logging\\log.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\logging\\logrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\logging\\logrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\employee\\viewemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\employee\\viewemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\event\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\event\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Employee\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AttendenceApp\\Views\\Employee\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|c:\\learn epam exercise\\attendenceapp-epam\\attendenceapp\\migrations\\20250322111742_m1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D2253D-00FE-4262-BF47-92A67C52ECE3}|AttendenceApp\\AttendenceApp.csproj|solutionrelative:attendenceapp\\migrations\\20250322111742_m1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -162,7 +225,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 22,
+          "SelectedChildIndex": 61,
           "Children": [
             {
               "$type": "Bookmark",
@@ -193,8 +256,208 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ViewReport.cshtml",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\EventReport\\ViewReport.cshtml",
+              "RelativeDocumentMoniker": "AttendenceApp\\Views\\EventReport\\ViewReport.cshtml",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\EventReport\\ViewReport.cshtml",
+              "RelativeToolTip": "AttendenceApp\\Views\\EventReport\\ViewReport.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T18:26:04.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "reports.cshtml",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\EventReport\\reports.cshtml",
+              "RelativeDocumentMoniker": "AttendenceApp\\Views\\EventReport\\reports.cshtml",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\EventReport\\reports.cshtml",
+              "RelativeToolTip": "AttendenceApp\\Views\\EventReport\\reports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T18:14:40.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Resolve.cshtml",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\EventReport\\Resolve.cshtml",
+              "RelativeDocumentMoniker": "AttendenceApp\\Views\\EventReport\\Resolve.cshtml",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\EventReport\\Resolve.cshtml",
+              "RelativeToolTip": "AttendenceApp\\Views\\EventReport\\Resolve.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T18:10:25.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Employees.cshtml",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Home\\Employees.cshtml",
+              "RelativeDocumentMoniker": "AttendenceApp\\Views\\Home\\Employees.cshtml",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Home\\Employees.cshtml",
+              "RelativeToolTip": "AttendenceApp\\Views\\Home\\Employees.cshtml",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAAJMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-22T16:55:52.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EventReportViewModel.cs",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\EventReportViewModel.cs",
+              "RelativeDocumentMoniker": "AttendenceApp\\Models\\EventReportViewModel.cs",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\EventReportViewModel.cs",
+              "RelativeToolTip": "AttendenceApp\\Models\\EventReportViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T11:58:40.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "dbo.EventReports.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EventEPAM_DEV/True/SqlTable/dbo.EventReports.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EventEPAM_DEV/True/SqlTable/dbo.EventReports.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-03-22T11:36:12.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EventReportController.cs",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Controllers\\EventReportController.cs",
+              "RelativeDocumentMoniker": "AttendenceApp\\Controllers\\EventReportController.cs",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Controllers\\EventReportController.cs",
+              "RelativeToolTip": "AttendenceApp\\Controllers\\EventReportController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAuwCwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T11:31:41.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ReportList.cshtml",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\EventReport\\ReportList.cshtml",
+              "RelativeDocumentMoniker": "AttendenceApp\\Views\\EventReport\\ReportList.cshtml",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\EventReport\\ReportList.cshtml",
+              "RelativeToolTip": "AttendenceApp\\Views\\EventReport\\ReportList.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-22T11:30:50.482Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "ReportEvent.cshtml",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\EventReport\\ReportEvent.cshtml",
+              "RelativeDocumentMoniker": "AttendenceApp\\Views\\EventReport\\ReportEvent.cshtml",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\EventReport\\ReportEvent.cshtml",
+              "RelativeToolTip": "AttendenceApp\\Views\\EventReport\\ReportEvent.cshtml",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAKAAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-22T11:30:37.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "20250322111742_m1.cs",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Migrations\\20250322111742_m1.cs",
+              "RelativeDocumentMoniker": "AttendenceApp\\Migrations\\20250322111742_m1.cs",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Migrations\\20250322111742_m1.cs",
+              "RelativeToolTip": "AttendenceApp\\Migrations\\20250322111742_m1.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAA1wGMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T11:17:42.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "NotFound.cshtml",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Shared\\NotFound.cshtml",
+              "RelativeDocumentMoniker": "AttendenceApp\\Views\\Shared\\NotFound.cshtml",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Shared\\NotFound.cshtml",
+              "RelativeToolTip": "AttendenceApp\\Views\\Shared\\NotFound.cshtml",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAACUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-22T10:52:32.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "20250321084024_m1.cs",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Migrations\\20250321084024_m1.cs",
+              "RelativeDocumentMoniker": "AttendenceApp\\Migrations\\20250321084024_m1.cs",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Migrations\\20250321084024_m1.cs",
+              "RelativeToolTip": "AttendenceApp\\Migrations\\20250321084024_m1.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T08:40:24.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "20250321083411_m1.cs",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Migrations\\20250321083411_m1.cs",
+              "RelativeDocumentMoniker": "AttendenceApp\\Migrations\\20250321083411_m1.cs",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Migrations\\20250321083411_m1.cs",
+              "RelativeToolTip": "AttendenceApp\\Migrations\\20250321083411_m1.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T08:34:11.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "EventFeedback.cs",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\EventFeedback.cs",
+              "RelativeDocumentMoniker": "AttendenceApp\\Models\\EventFeedback.cs",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\EventFeedback.cs",
+              "RelativeToolTip": "AttendenceApp\\Models\\EventFeedback.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA/wB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T08:30:18.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EventReport.cs",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\EventReport.cs",
+              "RelativeDocumentMoniker": "AttendenceApp\\Models\\EventReport.cs",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\EventReport.cs",
+              "RelativeToolTip": "AttendenceApp\\Models\\EventReport.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T08:29:49.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "SuccessViewModel.cs",
+              "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\SuccessViewModel.cs",
+              "RelativeDocumentMoniker": "AttendenceApp\\Models\\SuccessViewModel.cs",
+              "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\SuccessViewModel.cs",
+              "RelativeToolTip": "AttendenceApp\\Models\\SuccessViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T09:19:37.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
               "Title": "IRepository.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Repositories\\IRepository.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Repositories\\IRepository.cs",
@@ -206,31 +469,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 37,
               "Title": "success.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Employee\\success.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Employee\\success.cshtml",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Employee\\success.cshtml",
               "RelativeToolTip": "AttendenceApp\\Views\\Employee\\success.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-08T13:01:17.503Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 42,
               "Title": "log.txt",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Logging\\log.txt",
               "RelativeDocumentMoniker": "AttendenceApp\\Logging\\log.txt",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Logging\\log.txt",
               "RelativeToolTip": "AttendenceApp\\Logging\\log.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAO8AAAAAAAAAAAAAAPgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2025-03-03T06:48:17.77Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 45,
               "Title": "LogRequest.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Logging\\LogRequest.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Logging\\LogRequest.cs",
@@ -242,7 +505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 47,
               "Title": "viewemployee.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Employee\\viewemployee.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Employee\\viewemployee.cshtml",
@@ -254,19 +517,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "showattendance.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Event\\showattendance.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Event\\showattendance.cshtml",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Event\\showattendance.cshtml",
               "RelativeToolTip": "AttendenceApp\\Views\\Event\\showattendance.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB8AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-25T18:09:11.313Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 39,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -278,7 +541,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 50,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Shared\\Error.cshtml",
@@ -290,7 +553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 52,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Employee\\Index.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Employee\\Index.cshtml",
@@ -302,31 +565,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "OpenParticipation.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Employee\\OpenParticipation.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Employee\\OpenParticipation.cshtml",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Employee\\OpenParticipation.cshtml",
               "RelativeToolTip": "AttendenceApp\\Views\\Employee\\OpenParticipation.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAIBJwB8AAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAwC0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-24T12:04:56.984Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "createparticipation.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Employee\\createparticipation.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Employee\\createparticipation.cshtml",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Employee\\createparticipation.cshtml",
               "RelativeToolTip": "AttendenceApp\\Views\\Employee\\createparticipation.cshtml",
-              "ViewState": "AgIAAL0AAAAAAAAAAAAqwMMAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-24T12:02:38.193Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 17,
               "Title": "eventregistration.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Event\\eventregistration.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Event\\eventregistration.cshtml",
@@ -338,56 +601,56 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 20,
               "Title": "EmployeeController.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Controllers\\EmployeeController.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Controllers\\EmployeeController.cs",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Controllers\\EmployeeController.cs",
               "RelativeToolTip": "AttendenceApp\\Controllers\\EmployeeController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAAAGMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAkwG0AAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T11:32:01.857Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 27,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Controllers\\HomeController.cs",
               "RelativeToolTip": "AttendenceApp\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T11:21:56.228Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 28,
               "Title": "BaseController.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Controllers\\BaseController.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Controllers\\BaseController.cs",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Controllers\\BaseController.cs",
               "RelativeToolTip": "AttendenceApp\\Controllers\\BaseController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T11:17:42.3Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 16,
               "Title": "openparticipation.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Event\\openparticipation.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Event\\openparticipation.cshtml",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Event\\openparticipation.cshtml",
               "RelativeToolTip": "AttendenceApp\\Views\\Event\\openparticipation.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAwCsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-24T10:17:27.446Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 51,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Home\\Privacy.cshtml",
@@ -399,31 +662,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 29,
               "Title": "eventdetail.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Event\\eventdetail.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Event\\eventdetail.cshtml",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Event\\eventdetail.cshtml",
               "RelativeToolTip": "AttendenceApp\\Views\\Event\\eventdetail.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-23T14:55:34.075Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 8,
               "Title": "details.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Event\\details.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Event\\details.cshtml",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Event\\details.cshtml",
               "RelativeToolTip": "AttendenceApp\\Views\\Event\\details.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAIBJwFEAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAP4BAAAAAAAAAAAAAA0CAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-23T14:54:59.701Z"
+              "WhenOpened": "2025-02-23T14:54:59.701Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 46,
               "Title": "EmployeeRepository.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Repositories\\EmployeeRepository.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Repositories\\EmployeeRepository.cs",
@@ -435,7 +699,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 48,
               "Title": "create.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Event\\create.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Event\\create.cshtml",
@@ -447,31 +711,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 18,
               "Title": "events.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Event\\events.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Event\\events.cshtml",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Event\\events.cshtml",
               "RelativeToolTip": "AttendenceApp\\Views\\Event\\events.cshtml",
-              "ViewState": "AgIAAEAAAAAAAAAAAIBJwFUAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAAFUAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-23T14:08:04.352Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 21,
               "Title": "EventController.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Controllers\\EventController.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Controllers\\EventController.cs",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Controllers\\EventController.cs",
               "RelativeToolTip": "AttendenceApp\\Controllers\\EventController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAwwGUAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAswI4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-23T14:06:54.096Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 34,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Models\\ErrorViewModel.cs",
@@ -483,19 +747,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 33,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Program.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Program.cs",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Program.cs",
               "RelativeToolTip": "AttendenceApp\\Program.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC4AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAASwCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-23T11:52:54.766Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 49,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\appsettings.json",
               "RelativeDocumentMoniker": "AttendenceApp\\appsettings.json",
@@ -507,55 +771,56 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 35,
               "Title": "MyAppContext.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\DatabaseContext\\MyAppContext.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\DatabaseContext\\MyAppContext.cs",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\DatabaseContext\\MyAppContext.cs",
               "RelativeToolTip": "AttendenceApp\\DatabaseContext\\MyAppContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAqwA0AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-23T11:31:13.105Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 4,
               "Title": "Attendence.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\Attendence.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Models\\Attendence.cs",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\Attendence.cs",
               "RelativeToolTip": "AttendenceApp\\Models\\Attendence.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T11:07:37.862Z"
+              "WhenOpened": "2025-02-23T11:07:37.862Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Controllers\\LoginController.cs",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Controllers\\LoginController.cs",
               "RelativeToolTip": "AttendenceApp\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAiwDoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-23T09:43:30.309Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 38,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Login\\Index.cshtml",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Login\\Index.cshtml",
               "RelativeToolTip": "AttendenceApp\\Views\\Login\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGsAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-23T09:36:32.121Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 43,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\_ViewImports.cshtml",
@@ -567,31 +832,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "AttendenceApp\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAD8AAAACAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABYAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-23T09:18:15.579Z"
+              "WhenOpened": "2025-02-23T09:18:15.579Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 7,
               "Title": "site.css",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "AttendenceApp\\wwwroot\\css\\site.css",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\wwwroot\\css\\site.css",
               "RelativeToolTip": "AttendenceApp\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAqwJAAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAowH8AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-23T09:14:07.562Z"
+              "WhenOpened": "2025-02-23T09:14:07.562Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 26,
               "Title": "AttendenceApp",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\AttendenceApp.csproj",
               "RelativeDocumentMoniker": "AttendenceApp\\AttendenceApp.csproj",
@@ -602,19 +869,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "AttendenceApp\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "AttendenceApp\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAABsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-23T09:02:59.043Z"
+              "WhenOpened": "2025-02-23T09:02:59.043Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 3,
               "Title": "Employee.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\Employee.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Models\\Employee.cs",
@@ -622,35 +890,34 @@
               "RelativeToolTip": "AttendenceApp\\Models\\Employee.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-22T18:50:01.668Z"
+              "WhenOpened": "2025-02-22T18:50:01.668Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 2,
               "Title": "Event.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\Event.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Models\\Event.cs",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\Event.cs",
               "RelativeToolTip": "AttendenceApp\\Models\\Event.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAwwBAAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAcwCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-22T18:47:10.139Z"
+              "WhenOpened": "2025-02-22T18:47:10.139Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 0,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\User.cs",
               "RelativeDocumentMoniker": "AttendenceApp\\Models\\User.cs",
               "ToolTip": "C:\\LEARN EPAM Exercise\\AttendenceApp-EPAM\\AttendenceApp\\Models\\User.cs",
               "RelativeToolTip": "AttendenceApp\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBcAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA9wAYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-22T18:45:17.369Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "WhenOpened": "2025-02-22T18:45:17.369Z",
+              "EditorCaption": ""
             }
           ]
         }

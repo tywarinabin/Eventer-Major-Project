@@ -1,0 +1,247 @@
+﻿@model IEnumerable<Event>
+
+@{
+	ViewData["Title"] = "All Events";
+}
+
+<head>
+	<title>All Events</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<!-- FontAwesome for Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+<div class="container">
+	<h2 class="page-title"><i class="fas fa-calendar-alt"></i> Events</h2>
+
+	<!-- Filter Buttons -->
+	<div class="filter-buttons">
+		<button class="filter-btn active" data-status="All">All</button>
+		<button class="filter-btn" data-status="Upcoming">Upcoming</button>
+		<button class="filter-btn" data-status="Ongoing">Ongoing</button>
+		<button class="filter-btn" data-status="Completed">Completed</button>
+	</div>
+
+	<div class="event-grid">
+		@foreach (var eventItem in Model)
+		{
+			var status = GetEventStatus(eventItem);
+			<div class="event-card" data-status="@status">
+				<div class="event-header">
+					<h3>@eventItem.Name</h3>
+					<span class="status @GetEventStatusClass(status)">@status</span>
+				</div>
+				<p class="event-type"><i class="fas fa-tag"></i> @eventItem.EventType</p>
+				<p class="event-description">@eventItem.Description</p>
+				<div class="event-footer">
+					<p><i class="fas fa-clock"></i> @eventItem.StartDate.ToString("MMMM dd, yyyy - hh:mm tt")</p>
+					@if (eventItem.EndDate.HasValue)
+					{
+						<p><i class="fas fa-hourglass-end"></i> @eventItem.EndDate.Value.ToString("MMMM dd, yyyy - hh:mm tt")</p>
+						<p><i class="fas fa-hourglass-half"></i> Duration: @GetEventDuration(eventItem) minutes</p>
+					}
+				<a asp-controller="Event" asp-action="Details" asp-route-id="@eventItem.Id" asp-route-title="@($"{eventItem.Id}-{eventItem.Name}")" class="event-btn">View Details</a>
+</div>
+			</div>
+		}
+	</div>
+</div>
+
+<script>
+	$(document).ready(function () {
+		$('.filter-btn').click(function () {
+			var status = $(this).data('status');
+			$('.filter-btn').removeClass('active');
+			$(this).addClass('active');
+
+			$('.event-card').each(function () {
+				if (status === "All" || $(this).data('status') === status) {
+					$(this).fadeIn();
+				} else {
+					$(this).fadeOut();
+				}
+			});
+		});
+	});
+</script>
+<style>
+	.filter-buttons {
+		display: flex;
+		justify-content: center;
+		gap: 10px;
+		margin-bottom: 20px;
+	}
+
+	.filter-btn {
+		background: #00a8b5;
+		color: white;
+		border: none;
+		padding: 10px 20px;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: 0.3s;
+		font-size: 1rem;
+		font-weight: bold;
+	}
+
+		.filter-btn:hover, .filter-btn.active {
+			background: #608b69;
+		}
+
+	body {
+		background: #f4f6f9;
+		font-family: "Source Sans Pro", sans-serif;
+		margin: 0;
+		padding: 0;
+	}
+
+	.container {
+		max-width: 100vw;
+		margin: auto;
+		padding: 2rem;
+	}
+
+	.page-title {
+		text-align: center;
+		color: #333;
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.8rem;
+	}
+
+	.event-grid {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 1.5rem;
+	}
+
+	@@media (min-width: 1650px) {
+		.event-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.event-card {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 12px;
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease-in-out;
+	}
+
+		.event-card:hover {
+			transform: translateY(-5px);
+		}
+
+	.event-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1rem;
+	}
+
+		.event-header h3 {
+			margin: 0;
+			color: #333;
+			font-size: 1.4rem;
+		}
+
+	.status {
+		padding: 0.4rem 0.8rem;
+		font-size: 0.9rem;
+		border-radius: 5px;
+		color: white;
+		font-weight: bold;
+	}
+
+		.status.Upcoming {
+			background: green;
+		}
+
+		.status.Ongoing {
+			background: #f39c12;
+		}
+
+		.status.Completed {
+			background: red;
+		}
+
+	.event-type {
+		font-size: 1rem;
+		font-weight: 600;
+		color: #555;
+	}
+
+	.event-description {
+		font-size: 0.95rem;
+		color: #666;
+		margin: 0.5rem 0;
+		height: 8em;
+		overflow: hidden;
+		line-height: 1.5em;
+	}
+
+	.event-footer {
+		margin-top: 1rem;
+	}
+
+		.event-footer p {
+			margin: 0.3rem 0;
+			font-size: 0.9rem;
+			color: #777;
+		}
+
+	.event-btn {
+		background: linear-gradient(45deg, #00ced1, #00a8b5);
+		color: white;
+		padding: 0.7rem 1rem;
+		border: none;
+		border-radius: 8px;
+		font-size: 1rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		text-transform: uppercase;
+		margin-top: 1rem;
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+
+		.event-btn:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 5px 15px rgba(0, 206, 209, 0.3);
+		}
+</style>
+@functions {
+	string GetEventStatus(Event eventItem)
+	{
+		var now = DateTime.UtcNow;
+		if (eventItem.EndDate < now) return "Completed";
+		if (eventItem.StartDate <= now) return "Ongoing";
+		return "Upcoming";
+	}
+
+	string GetEventStatusClass(string status)
+	{
+		return status switch
+		{
+			"Upcoming" => "Upcoming",
+			"Ongoing" => "Ongoing",
+			"Completed" => "Completed",
+			_ => ""
+		};
+	}
+
+	int GetEventDuration(Event eventItem)
+	{
+		return eventItem.EndDate.HasValue
+			? (int)(eventItem.EndDate.Value - eventItem.StartDate).TotalMinutes
+			: 0;
+	}
+}

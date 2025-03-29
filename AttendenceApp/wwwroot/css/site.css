@@ -117,13 +117,15 @@ a {
         .nav-links a:hover::after {
             width: 100%;
         }
-
+.nohover{
+    width:0;
+}
 .logout-btn {
     background: linear-gradient(45deg, #ff4757, #ff6b81);
     color: white;
     padding: 0.6rem 1.5rem;
     border: none;
-    border-radius: 25px;
+    border-radius: 1rem;
     cursor: pointer;
     font-weight: 600;
     display: flex;
