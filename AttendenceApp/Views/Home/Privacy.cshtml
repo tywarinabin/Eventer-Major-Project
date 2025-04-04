@@ -1,6 +1,284 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    Layout = "_Layout";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Information - Eventer Attendance</title>
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --ocean-blue: #0093E9;
+            --sea-green: #00D4B0;
+            --wave-teal: #08B2E3;
+            --deep-blue: #0575E6;
+            --sand: #F5F5DC;
+            --foam: #E6F9FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--foam);
+            color: #2d3436;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .privacy-header {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--ocean-blue) 100%);
+            color: white;
+            margin-bottom: 2rem;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 20px rgba(0, 147, 233, 0.2);
+        }
+
+            .privacy-header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+        .section-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 147, 233, 0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--sea-green);
+        }
+
+            .section-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0, 147, 233, 0.15);
+            }
+
+        .section-icon {
+            font-size: 2rem;
+            color: var(--wave-teal);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: var(--deep-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul {
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+            li:before {
+                content: "•";
+                color: var(--sea-green);
+                font-weight: bold;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+            }
+
+        .contact-box {
+            background: linear-gradient(135deg, var(--ocean-blue) 0%, var(--sea-green) 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .email-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+            .email-link:hover {
+                background: rgba(255, 255, 255, 0.3);
+                transform: translateY(-2px);
+            }
+
+        .functionality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 147, 233, 0.1);
+            transition: all 0.3s ease;
+        }
+
+            .feature-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(0, 147, 233, 0.15);
+            }
+
+        .feature-icon {
+            font-size: 1.8rem;
+            color: var(--ocean-blue);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            color: var(--deep-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        @@media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .privacy-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-card {
+                padding: 1.5rem;
+            }
+
+            .functionality-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="privacy-header">
+        <div class="container">
+            <h1><i class="fas fa-shield-alt"></i> Privacy & Features Information</h1>
+            <p>Last Updated: @DateTime.Now.ToString("MMMM dd, yyyy")</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Application Functionality -->
+        <div class="section-card">
+            <div class="section-icon">
+                <i class="fas fa-calendar-check"></i>
+            </div>
+            <h2><i class="fas fa-cogs"></i> Application Functionality</h2>
+            <p>Our Attendance System provides essential event management tools:</p>
+
+            <div class="functionality-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-clock"></i>
+                    </div>
+                    <h3 class="feature-title">Basic Attendance Tracking</h3>
+                    <p>Simple check-in/out functionality with timestamp recording</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Participant Management</h3>
+                    <p>Add, edit, and manage participant information</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-export"></i>
+                    </div>
+                    <h3 class="feature-title">Basic Reports</h3>
+                    <p>Export attendance data in simple formats</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Collection Section -->
+        <div class="section-card">
+            <div class="section-icon">
+                <i class="fas fa-database"></i>
+            </div>
+            <h2><i class="fas fa-info-circle"></i> Information We Collect</h2>
+            <ul>
+                <li><strong>Basic Registration Data:</strong> Name and email address</li>
+                <li><strong>Attendance Records:</strong> Check-in/out times</li>
+                <li><strong>Event Participation:</strong> Which events participants attended</li>
+            </ul>
+        </div>
+
+        <!-- Data Usage Section -->
+        <div class="section-card">
+            <div class="section-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h2><i class="fas fa-tasks"></i> How We Use Your Information</h2>
+            <ul>
+                <li>Track event attendance for organizational purposes</li>
+                <li>Generate basic participation reports</li>
+                <li>Contact participants about event changes when necessary</li>
+            </ul>
+        </div>
+
+        <!-- Data Protection Section -->
+        <div class="section-card">
+            <div class="section-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h2><i class="fas fa-shield-virus"></i> Data Protection</h2>
+            <ul>
+                <li>Secure storage of all participant data</li>
+                <li>Password protection for all accounts</li>
+                <li>Regular system maintenance</li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-box">
+            <div class="section-icon">
+                <i class="fas fa-life-ring"></i>
+            </div>
+            <h2>Need Help or Have Questions?</h2>
+            <p>Our support team is here to assist you with any privacy concerns or feature inquiries.</p>
+            <a href="mailto:admin@eventer.com" class="email-link">
+                <i class="fas fa-envelope"></i> admin@eventer.com
+            </a>
+        </div>
+    </div>
+</body>
+</html>

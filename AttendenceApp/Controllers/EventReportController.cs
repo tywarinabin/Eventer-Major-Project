@@ -38,8 +38,6 @@ namespace AttendenceApp.Controllers
 
         // POST: ReportEvent
         [HttpPost]
-        // POST: ReportEvent
-        [HttpPost]
         public IActionResult ReportEvent(EventReportViewModel viewModel)
         {
             if (!ModelState.IsValid)
